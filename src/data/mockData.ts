@@ -95,6 +95,37 @@ export const courses: Course[] = [
     highlight: true
   },
   {
+    id: '7',
+    slug: 'marketing-inteligencia-artificial-pmes',
+    title: 'Marketing e Inteligencia Artificial para Empreendedores PMEs',
+    description: 'Curso completo para empreendedores de pequenas e medias empresas que desejam dominar estrategias de marketing potencializadas pela inteligencia artificial. Aprenda a usar ferramentas de IA para automatizar campanhas, criar conteudo e analisar dados.',
+    shortDescription: 'Domine o marketing com IA e revolucione sua estrategia digital.',
+    modality: 'ead',
+    type: 'curso',
+    duration: '8 semanas',
+    workload: '40 horas',
+    price: 'R$ 1.200',
+    originalPrice: 'R$ 3.200',
+    themes: ['Marketing', 'Inteligencia Artificial', 'PMEs'],
+    target: ['Empreendedores de PMEs', 'Gestores de marketing', 'Empresarios que buscam inovacao'],
+    benefits: [
+      'Ferramentas de IA para marketing',
+      'Automacao de campanhas',
+      'Criacao de conteudo com IA',
+      'Analise de dados e insights',
+      'Certificado de conclusao',
+      'Parcele em ate 10x sem juros'
+    ],
+    modules: [
+      { title: 'Fundamentos de IA no Marketing', topics: ['O que e IA', 'Ferramentas disponiveis', 'Cases de sucesso'] },
+      { title: 'Automacao e Conteudo', topics: ['ChatGPT para negocios', 'Geracao de conteudo', 'E-mail marketing automatizado'] },
+      { title: 'Analise e Otimizacao', topics: ['Metricas com IA', 'Testes A/B inteligentes', 'Personalizacao de campanhas'] }
+    ],
+    instructors: [{ name: 'Prof. Ricardo Tech', role: 'Especialista em IA', bio: 'Consultor de marketing digital e inteligencia artificial com 15 anos de experiencia.' }],
+    featured: true,
+    highlight: true
+  },
+  {
     id: '1',
     slug: 'formacao-precificacao-estrategica',
     title: 'Formacao em Precificacao Estrategica',

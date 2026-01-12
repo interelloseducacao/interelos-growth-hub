@@ -293,36 +293,105 @@ export default function Index() {
       </section>
 
       {/* CTA Section with Form */}
-      <section className="section-padding bg-primary">
-        <div className="container-section">
+      <section className="relative section-padding overflow-hidden">
+        {/* Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-cta via-cta-hover to-accent" />
+        
+        {/* Decorative Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+          <div className="absolute top-1/2 left-1/4 w-4 h-4 bg-white/30 rounded-full animate-pulse" />
+          <div className="absolute top-1/3 right-1/4 w-3 h-3 bg-white/20 rounded-full animate-pulse" style={{ animationDelay: '500ms' }} />
+          <div className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-white/40 rounded-full animate-pulse" style={{ animationDelay: '1000ms' }} />
+        </div>
+        
+        <div className="container-section relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="text-primary-foreground">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Pronto para desenvolver sua empresa?
+            <div className="text-white">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 mb-6">
+                <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                <span className="text-sm font-medium">Parcele em ate 10x sem juros</span>
+              </div>
+              
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                Pronto para
+                <span className="block text-white/90">transformar sua empresa?</span>
               </h2>
-              <p className="text-lg text-primary-foreground/80 mb-6">
-                Entre em contato e descubra a melhor solucao para o seu momento.
+              
+              <p className="text-xl text-white/85 mb-8 leading-relaxed">
+                Junte-se a mais de 15.000 profissionais que ja desenvolveram suas habilidades conosco.
               </p>
-              <ul className="space-y-3 text-primary-foreground/90">
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-cta" />
-                  Cursos e treinamentos para individuos e equipes
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-cta" />
-                  Mentoria com acompanhamento personalizado
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-cta" />
-                  Consultoria estrategica para empresas
-                </li>
-              </ul>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
+                      <GraduationCap className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-sm text-white/70">Cursos</div>
+                      <div className="font-semibold text-white">Individuais</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
+                      <Users className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-sm text-white/70">Mentorias</div>
+                      <div className="font-semibold text-white">Personalizadas</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
+                      <Briefcase className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-sm text-white/70">Consultoria</div>
+                      <div className="font-semibold text-white">Estrategica</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 text-sm text-white/70">
+                <div className="flex items-center gap-2">
+                  <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
+                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span>Certificado incluso</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
+                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span>Suporte completo</span>
+                </div>
+              </div>
             </div>
 
-            <div className="bg-card rounded-xl p-6 md:p-8">
-              <h3 className="text-xl font-semibold text-foreground mb-6">
+            <div className="bg-card rounded-2xl p-8 shadow-2xl border border-border">
+              <div className="flex items-center gap-2 mb-6">
+                <div className="w-3 h-3 rounded-full bg-cta animate-pulse" />
+                <span className="text-sm font-medium text-muted-foreground">Resposta em ate 24h</span>
+              </div>
+              <h3 className="text-2xl font-bold text-foreground mb-2">
                 Fale com a Interelos
               </h3>
+              <p className="text-muted-foreground mb-6">
+                Conte-nos sobre sua empresa e objetivos
+              </p>
               <LeadForm />
             </div>
           </div>

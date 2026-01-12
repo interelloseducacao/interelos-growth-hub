@@ -64,6 +64,7 @@ export function CourseCard({ course }: CourseCardProps) {
               <span className="text-xs text-muted-foreground line-through">{course.originalPrice}</span>
             )}
             <span className={`text-lg font-bold ${isHighlight ? 'text-cta' : 'text-primary'}`}>{course.price}</span>
+            <span className="text-[10px] text-muted-foreground">ou 10x sem juros</span>
           </div>
         )}
         <Link to={`/cursos/${course.slug}`} className="ml-auto">
