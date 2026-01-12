@@ -56,13 +56,13 @@ export default function Index() {
             
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: '200ms' }}>
               <Link to="/cursos">
-                <Button size="lg" className="bg-cta hover:bg-cta-hover text-cta-foreground w-full sm:w-auto text-lg px-8 py-6 shadow-lg shadow-cta/30">
+                <Button size="lg" className="bg-cta hover:bg-cta-hover text-cta-foreground w-full sm:w-auto text-lg px-8 py-6 shadow-[0_0_20px_rgba(59,130,246,0.4),0_0_40px_rgba(59,130,246,0.2)] hover:shadow-[0_0_25px_rgba(59,130,246,0.5),0_0_50px_rgba(59,130,246,0.3)] transition-shadow">
                   Ver Cursos
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link to="/contato">
-                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 w-full sm:w-auto text-lg px-8 py-6 backdrop-blur-sm">
+                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 w-full sm:w-auto text-lg px-8 py-6 backdrop-blur-sm shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.2),0_0_40px_rgba(100,150,255,0.15)] transition-shadow">
                   Solicitar Proposta
                 </Button>
               </Link>
