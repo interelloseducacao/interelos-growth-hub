@@ -32,11 +32,11 @@ export function Header() {
 
           {/* Mobile menu button and area do aluno */}
           <div className="flex lg:hidden items-center gap-2">
-            <Link to="/area-do-aluno" className="flex flex-col items-center">
-              <Button variant="ghost" size="icon" className="h-9 w-9">
+            <Link to="/area-do-aluno" className="flex flex-col items-center group">
+              <Button variant="ghost" size="icon" className="h-9 w-9 transition-transform duration-200 group-hover:scale-110 group-hover:text-primary">
                 <LogIn className="h-5 w-5" />
               </Button>
-              <span className="text-[10px] text-muted-foreground -mt-1">Aluno</span>
+              <span className="text-[10px] text-muted-foreground -mt-1 group-hover:text-primary transition-colors">Aluno</span>
             </Link>
             <button
               type="button"

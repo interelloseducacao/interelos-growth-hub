@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Mail, Phone, Linkedin, Instagram, Youtube } from 'lucide-react';
+import { MapPin, Mail, Phone, Linkedin, Instagram, Youtube, MessageCircle } from 'lucide-react';
 
 const navigation = {
   solutions: [
@@ -25,6 +25,9 @@ const social = [
   { name: 'Instagram', icon: Instagram, href: '#' },
   { name: 'YouTube', icon: Youtube, href: '#' },
 ];
+
+const WHATSAPP_NUMBER = '5511999999999'; // Substitua pelo número real
+const WHATSAPP_MESSAGE = 'Olá! Gostaria de saber mais sobre os cursos da Interelos.';
 
 export function Footer() {
   return (
@@ -95,20 +98,29 @@ export function Footer() {
             <h3 className="text-sm font-semibold uppercase tracking-wider">
               Contato
             </h3>
-            <div className="mt-4">
+            <div className="mt-4 flex flex-col gap-3">
               <Link
                 to="/contato"
                 className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg bg-cta text-cta-foreground hover:bg-cta-hover transition-colors"
               >
                 Solicitar Proposta
               </Link>
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-green-600 text-white hover:bg-green-700 transition-all hover:scale-105"
+              >
+                <MessageCircle className="h-4 w-4" />
+                Chamar no WhatsApp
+              </a>
             </div>
             <div className="mt-6 flex gap-4">
               {social.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors hover:scale-110 transform"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
