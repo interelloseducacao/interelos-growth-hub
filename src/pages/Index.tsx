@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { SocialProof } from '@/components/sections/SocialProof';
 import { HowItWorks } from '@/components/sections/HowItWorks';
@@ -307,38 +308,61 @@ export default function Index() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Column - Value Proposition */}
             <div className="text-white">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+              <motion.h2 
+                className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
                 Vamos conversar sobre o futuro do seu negócio?
-              </h2>
+              </motion.h2>
               
-              <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed">
+              <motion.p 
+                className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
                 Conte-nos sobre seus desafios. Nossa equipe entrará em contato em até 24 horas para apresentar a melhor solução.
-              </p>
+              </motion.p>
               
               {/* Benefits List */}
               <div className="space-y-4 mb-10">
-                <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-cta flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="h-4 w-4 text-cta-foreground" />
-                  </div>
-                  <span className="text-white/90 text-lg">Diagnóstico gratuito e sem compromisso</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-cta flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="h-4 w-4 text-cta-foreground" />
-                  </div>
-                  <span className="text-white/90 text-lg">Soluções personalizadas para seu momento</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-cta flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="h-4 w-4 text-cta-foreground" />
-                  </div>
-                  <span className="text-white/90 text-lg">Parcelamento em até 10x sem juros</span>
-                </div>
+                {[
+                  "Diagnóstico gratuito e sem compromisso",
+                  "Soluções personalizadas para seu momento",
+                  "Parcelamento em até 10x sem juros"
+                ].map((benefit, index) => (
+                  <motion.div 
+                    key={index}
+                    className="flex items-center gap-3"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
+                  >
+                    <motion.div 
+                      className="w-6 h-6 rounded-full bg-cta flex items-center justify-center flex-shrink-0"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ type: "spring", stiffness: 400 }}
+                    >
+                      <CheckCircle className="h-4 w-4 text-cta-foreground" />
+                    </motion.div>
+                    <span className="text-white/90 text-lg">{benefit}</span>
+                  </motion.div>
+                ))}
               </div>
 
               {/* Social Proof */}
-              <div className="flex items-center gap-3 pt-6 border-t border-white/20">
+              <motion.div 
+                className="flex items-center gap-3 pt-6 border-t border-white/20"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+              >
                 <div className="flex -space-x-2">
                   <div className="w-10 h-10 rounded-full bg-white/20 border-2 border-white/30 flex items-center justify-center">
                     <Users className="h-5 w-5 text-white/80" />
@@ -347,25 +371,51 @@ export default function Index() {
                 <p className="text-white/80 text-sm md:text-base">
                   Já ajudamos mais de <span className="font-semibold text-white">15.000 profissionais</span> a transformarem seus negócios
                 </p>
-              </div>
+              </motion.div>
             </div>
 
             {/* Right Column - Form Card */}
-            <div className="bg-card rounded-2xl p-6 md:p-8 shadow-2xl border border-border">
-              <div className="flex items-center gap-2 mb-2">
+            <motion.div 
+              className="bg-card rounded-2xl p-6 md:p-8 shadow-2xl border border-border"
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              whileHover={{ boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+            >
+              <motion.div 
+                className="flex items-center gap-2 mb-2"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+              >
                 <MessageCircle className="h-5 w-5 text-cta" />
                 <h3 className="text-xl md:text-2xl font-bold text-foreground">
                   Solicite seu diagnóstico gratuito
                 </h3>
-              </div>
+              </motion.div>
               
-              <div className="flex items-center gap-2 mb-6">
+              <motion.div 
+                className="flex items-center gap-2 mb-6"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+              >
                 <Clock className="h-4 w-4 text-muted-foreground" />
                 <span className="text-sm text-muted-foreground">Resposta em até 24 horas</span>
-              </div>
+              </motion.div>
               
-              <LeadForm variant="full" />
-            </div>
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6, duration: 0.4 }}
+              >
+                <LeadForm variant="full" />
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
