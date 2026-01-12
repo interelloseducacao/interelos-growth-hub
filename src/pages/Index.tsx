@@ -103,50 +103,83 @@ export default function Index() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Link to="/cursos" className="card-base p-8 text-center group">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-primary/10 mb-6 group-hover:bg-primary/20 transition-colors">
-                <GraduationCap className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">
-                Cursos e Treinamentos
-              </h3>
-              <p className="text-muted-foreground mb-4">
-                Formacoes completas em gestao, estrategia, financas, lideranca e mais.
-              </p>
-              <span className="inline-flex items-center text-primary font-medium group-hover:gap-2 transition-all">
-                Conhecer <ArrowRight className="ml-1 h-4 w-4" />
-              </span>
-            </Link>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0 }}
+            >
+              <Link to="/cursos" className="card-base p-8 text-center group block h-full">
+                <motion.div 
+                  className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-blue-100 mb-6 transition-all duration-300 group-hover:bg-blue-200 group-hover:shadow-lg group-hover:shadow-blue-200/50"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  <GraduationCap className="h-8 w-8 text-blue-600" />
+                </motion.div>
+                <h3 className="text-xl font-semibold text-foreground mb-3">
+                  Cursos e Treinamentos
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  Formacoes completas em gestao, estrategia, financas, lideranca e mais.
+                </p>
+                <span className="inline-flex items-center text-primary font-medium group-hover:gap-2 transition-all">
+                  Conhecer <ArrowRight className="ml-1 h-4 w-4" />
+                </span>
+              </Link>
+            </motion.div>
 
-            <Link to="/mentorias" className="card-base p-8 text-center group">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-primary/10 mb-6 group-hover:bg-primary/20 transition-colors">
-                <Users className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">
-                Mentorias
-              </h3>
-              <p className="text-muted-foreground mb-4">
-                Acompanhamento individual ou em grupo com especialistas experientes.
-              </p>
-              <span className="inline-flex items-center text-primary font-medium group-hover:gap-2 transition-all">
-                Conhecer <ArrowRight className="ml-1 h-4 w-4" />
-              </span>
-            </Link>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <Link to="/mentorias" className="card-base p-8 text-center group block h-full">
+                <motion.div 
+                  className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-indigo-100 mb-6 transition-all duration-300 group-hover:bg-indigo-200 group-hover:shadow-lg group-hover:shadow-indigo-200/50"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  <Users className="h-8 w-8 text-indigo-600" />
+                </motion.div>
+                <h3 className="text-xl font-semibold text-foreground mb-3">
+                  Mentorias
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  Acompanhamento individual ou em grupo com especialistas experientes.
+                </p>
+                <span className="inline-flex items-center text-primary font-medium group-hover:gap-2 transition-all">
+                  Conhecer <ArrowRight className="ml-1 h-4 w-4" />
+                </span>
+              </Link>
+            </motion.div>
 
-            <Link to="/consultoria" className="card-base p-8 text-center group">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-primary/10 mb-6 group-hover:bg-primary/20 transition-colors">
-                <Briefcase className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">
-                Consultorias
-              </h3>
-              <p className="text-muted-foreground mb-4">
-                Solucoes personalizadas para desafios especificos da sua empresa.
-              </p>
-              <span className="inline-flex items-center text-primary font-medium group-hover:gap-2 transition-all">
-                Conhecer <ArrowRight className="ml-1 h-4 w-4" />
-              </span>
-            </Link>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <Link to="/consultoria" className="card-base p-8 text-center group block h-full">
+                <motion.div 
+                  className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-sky-100 mb-6 transition-all duration-300 group-hover:bg-sky-200 group-hover:shadow-lg group-hover:shadow-sky-200/50"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  <Briefcase className="h-8 w-8 text-sky-600" />
+                </motion.div>
+                <h3 className="text-xl font-semibold text-foreground mb-3">
+                  Consultorias
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  Solucoes personalizadas para desafios especificos da sua empresa.
+                </p>
+                <span className="inline-flex items-center text-primary font-medium group-hover:gap-2 transition-all">
+                  Conhecer <ArrowRight className="ml-1 h-4 w-4" />
+                </span>
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>
