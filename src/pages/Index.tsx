@@ -9,6 +9,7 @@ import { CaseCard } from '@/components/cards/CaseCard';
 import { LeadForm } from '@/components/forms/LeadForm';
 import { Button } from '@/components/ui/button';
 import { courses, events, cases } from '@/data/mockData';
+import ProceduralGroundBackground from '@/components/backgrounds/ProceduralGroundBackground';
 import { 
   ArrowRight, 
   GraduationCap, 
@@ -30,17 +31,9 @@ export default function Index() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-accent min-h-[80vh] flex items-center">
-        {/* Background decorations */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-cta/20 rounded-full blur-3xl" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-white/5 to-transparent rounded-full" />
-          {/* Geometric patterns */}
-          <div className="absolute top-20 right-20 w-32 h-32 border border-white/10 rounded-2xl rotate-12" />
-          <div className="absolute bottom-32 right-40 w-20 h-20 border border-white/10 rounded-xl -rotate-12" />
-          <div className="absolute top-40 left-20 w-16 h-16 bg-cta/30 rounded-lg rotate-45" />
-        </div>
+      <section className="relative overflow-hidden min-h-[80vh] flex items-center bg-zinc-950">
+        {/* WebGL Background */}
+        <ProceduralGroundBackground />
 
         <div className="container-section relative z-10 py-20 md:py-28">
           <div className="max-w-4xl">
