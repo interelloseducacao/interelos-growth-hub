@@ -15,7 +15,10 @@ import {
   Briefcase,
   Monitor,
   Layers,
-  MapPin
+  MapPin,
+  CheckCircle,
+  MessageCircle,
+  Clock
 } from 'lucide-react';
 
 export default function Index() {
@@ -292,107 +295,76 @@ export default function Index() {
         </div>
       </section>
 
-      {/* CTA Section with Form */}
-      <section className="relative section-padding overflow-hidden">
-        {/* Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cta via-cta-hover to-accent" />
-        
-        {/* Decorative Elements */}
+      {/* CTA Section with Form - Redesigned */}
+      <section className="relative section-padding overflow-hidden bg-gradient-to-br from-primary via-primary to-accent">
+        {/* Subtle decorative element */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-          <div className="absolute top-1/2 left-1/4 w-4 h-4 bg-white/30 rounded-full animate-pulse" />
-          <div className="absolute top-1/3 right-1/4 w-3 h-3 bg-white/20 rounded-full animate-pulse" style={{ animationDelay: '500ms' }} />
-          <div className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-white/40 rounded-full animate-pulse" style={{ animationDelay: '1000ms' }} />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-3xl -translate-y-1/3 translate-x-1/3" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cta/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3" />
         </div>
         
         <div className="container-section relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left Column - Value Proposition */}
             <div className="text-white">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 mb-6">
-                <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-                <span className="text-sm font-medium">Parcele em ate 10x sem juros</span>
-              </div>
-              
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                Pronto para
-                <span className="block text-white/90">transformar sua empresa?</span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+                Vamos conversar sobre o futuro do seu negócio?
               </h2>
               
-              <p className="text-xl text-white/85 mb-8 leading-relaxed">
-                Junte-se a mais de 15.000 profissionais que ja desenvolveram suas habilidades conosco.
+              <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed">
+                Conte-nos sobre seus desafios. Nossa equipe entrará em contato em até 24 horas para apresentar a melhor solução.
               </p>
               
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
-                      <GraduationCap className="h-5 w-5 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-sm text-white/70">Cursos</div>
-                      <div className="font-semibold text-white">Individuais</div>
-                    </div>
+              {/* Benefits List */}
+              <div className="space-y-4 mb-10">
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-cta flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="h-4 w-4 text-cta-foreground" />
                   </div>
+                  <span className="text-white/90 text-lg">Diagnóstico gratuito e sem compromisso</span>
                 </div>
-                
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
-                      <Users className="h-5 w-5 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-sm text-white/70">Mentorias</div>
-                      <div className="font-semibold text-white">Personalizadas</div>
-                    </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-cta flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="h-4 w-4 text-cta-foreground" />
                   </div>
+                  <span className="text-white/90 text-lg">Soluções personalizadas para seu momento</span>
                 </div>
-                
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
-                      <Briefcase className="h-5 w-5 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-sm text-white/70">Consultoria</div>
-                      <div className="font-semibold text-white">Estrategica</div>
-                    </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-cta flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="h-4 w-4 text-cta-foreground" />
                   </div>
+                  <span className="text-white/90 text-lg">Parcelamento em até 10x sem juros</span>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 text-sm text-white/70">
-                <div className="flex items-center gap-2">
-                  <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
+              {/* Social Proof */}
+              <div className="flex items-center gap-3 pt-6 border-t border-white/20">
+                <div className="flex -space-x-2">
+                  <div className="w-10 h-10 rounded-full bg-white/20 border-2 border-white/30 flex items-center justify-center">
+                    <Users className="h-5 w-5 text-white/80" />
                   </div>
-                  <span>Certificado incluso</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span>Suporte completo</span>
-                </div>
+                <p className="text-white/80 text-sm md:text-base">
+                  Já ajudamos mais de <span className="font-semibold text-white">15.000 profissionais</span> a transformarem seus negócios
+                </p>
               </div>
             </div>
 
-            <div className="bg-card rounded-2xl p-8 shadow-2xl border border-border">
-              <div className="flex items-center gap-2 mb-6">
-                <div className="w-3 h-3 rounded-full bg-cta animate-pulse" />
-                <span className="text-sm font-medium text-muted-foreground">Resposta em ate 24h</span>
+            {/* Right Column - Form Card */}
+            <div className="bg-card rounded-2xl p-6 md:p-8 shadow-2xl border border-border">
+              <div className="flex items-center gap-2 mb-2">
+                <MessageCircle className="h-5 w-5 text-cta" />
+                <h3 className="text-xl md:text-2xl font-bold text-foreground">
+                  Solicite seu diagnóstico gratuito
+                </h3>
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">
-                Fale com a Interelos
-              </h3>
-              <p className="text-muted-foreground mb-6">
-                Conte-nos sobre sua empresa e objetivos
-              </p>
-              <LeadForm />
+              
+              <div className="flex items-center gap-2 mb-6">
+                <Clock className="h-4 w-4 text-muted-foreground" />
+                <span className="text-sm text-muted-foreground">Resposta em até 24 horas</span>
+              </div>
+              
+              <LeadForm variant="full" />
             </div>
           </div>
         </div>
