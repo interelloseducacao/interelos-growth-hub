@@ -26,29 +26,65 @@ export default function Index() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="gradient-hero text-primary-foreground py-20 md:py-28 lg:py-32">
-        <div className="container-section">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-accent min-h-[80vh] flex items-center">
+        {/* Background decorations */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-cta/20 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-white/5 to-transparent rounded-full" />
+          {/* Geometric patterns */}
+          <div className="absolute top-20 right-20 w-32 h-32 border border-white/10 rounded-2xl rotate-12" />
+          <div className="absolute bottom-32 right-40 w-20 h-20 border border-white/10 rounded-xl -rotate-12" />
+          <div className="absolute top-40 left-20 w-16 h-16 bg-cta/30 rounded-lg rotate-45" />
+        </div>
+
+        <div className="container-section relative z-10 py-20 md:py-28">
           <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in">
-              Desenvolvimento e aperfeicoamento para empreendedores e empresas
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8 animate-fade-in">
+              <span className="w-2 h-2 rounded-full bg-cta animate-pulse" />
+              <span className="text-sm font-medium text-white/90">20+ anos formando líderes de mercado</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6 animate-fade-in text-white">
+              Desenvolvimento e 
+              <span className="block text-cta">aperfeiçoamento</span>
+              para empreendedores
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl animate-fade-in" style={{ animationDelay: '100ms' }}>
-              Mais de 20 anos de experiencia academica e corporativa. 
-              Mais de 15.000 alunos treinados. 
-              Cases em empresas de pequeno, medio e grande porte.
+            
+            <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl animate-fade-in" style={{ animationDelay: '100ms' }}>
+              Transforme seu negócio com metodologias comprovadas. 
+              Mais de <span className="font-semibold text-white">15.000 profissionais</span> já 
+              aceleraram suas carreiras conosco.
             </p>
+            
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: '200ms' }}>
               <Link to="/cursos">
-                <Button size="lg" className="bg-cta hover:bg-cta-hover text-cta-foreground w-full sm:w-auto">
+                <Button size="lg" className="bg-cta hover:bg-cta-hover text-cta-foreground w-full sm:w-auto text-lg px-8 py-6 shadow-lg shadow-cta/30">
                   Ver Cursos
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link to="/contato">
-                <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 w-full sm:w-auto text-lg px-8 py-6 backdrop-blur-sm">
                   Solicitar Proposta
                 </Button>
               </Link>
+            </div>
+
+            {/* Quick stats */}
+            <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg animate-fade-in" style={{ animationDelay: '300ms' }}>
+              <div>
+                <div className="text-3xl md:text-4xl font-bold text-white">20+</div>
+                <div className="text-sm text-white/60">Anos de experiência</div>
+              </div>
+              <div>
+                <div className="text-3xl md:text-4xl font-bold text-white">15k+</div>
+                <div className="text-sm text-white/60">Alunos treinados</div>
+              </div>
+              <div>
+                <div className="text-3xl md:text-4xl font-bold text-white">500+</div>
+                <div className="text-sm text-white/60">Empresas atendidas</div>
+              </div>
             </div>
           </div>
         </div>

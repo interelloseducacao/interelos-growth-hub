@@ -11,6 +11,7 @@ export interface Course {
   duration: string;
   workload: string;
   price?: string;
+  originalPrice?: string;
   themes: string[];
   target: string[];
   benefits: string[];
@@ -19,6 +20,7 @@ export interface Course {
   dates?: string;
   location?: string;
   featured?: boolean;
+  highlight?: boolean;
 }
 
 export interface Event {
@@ -62,6 +64,36 @@ export interface Article {
 }
 
 export const courses: Course[] = [
+  {
+    id: '0',
+    slug: 'precificacao-empreendedores-facilities',
+    title: 'Precificacao para Empreendedores de Facilities',
+    description: 'Curso completo de precificacao especifico para o setor de facilities. Aprenda a calcular custos, definir margens e conquistar contratos lucrativos.',
+    shortDescription: 'Domine a precificacao no setor de facilities e aumente sua lucratividade.',
+    modality: 'ead',
+    type: 'curso',
+    duration: '6 semanas',
+    workload: '30 horas',
+    price: 'R$ 899',
+    originalPrice: 'R$ 2.999',
+    themes: ['Precificacao', 'Facilities', 'Gestao'],
+    target: ['Empreendedores de facilities', 'Gestores de contratos', 'Empresarios do setor de servicos'],
+    benefits: [
+      'Metodologia exclusiva para facilities',
+      'Planilhas de calculo prontas para uso',
+      'Cases reais do setor',
+      'Certificado de conclusao',
+      'Suporte durante o curso'
+    ],
+    modules: [
+      { title: 'Fundamentos de Custos em Facilities', topics: ['Custos diretos e indiretos', 'Mao de obra e encargos', 'Materiais e equipamentos'] },
+      { title: 'Formacao de Precos', topics: ['Markup e margem', 'BDI para servicos', 'Precificacao por metro quadrado'] },
+      { title: 'Estrategias Comerciais', topics: ['Proposta comercial vencedora', 'Negociacao de contratos', 'Reajustes e revisoes'] }
+    ],
+    instructors: [{ name: 'Prof. Carlos Silva', role: 'Diretor Academico', bio: 'Especialista em estrategia com 20+ anos de experiencia no setor.' }],
+    featured: true,
+    highlight: true
+  },
   {
     id: '1',
     slug: 'formacao-precificacao-estrategica',

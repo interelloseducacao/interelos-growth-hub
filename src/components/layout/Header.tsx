@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, LogIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import logoInterelos from '@/assets/logo-interelos.png';
 
 const navigation = [
   { name: 'Cursos', href: '/cursos' },
@@ -25,7 +26,7 @@ export function Header() {
           {/* Logo */}
           <div className="flex lg:flex-1">
             <Link to="/" className="-m-1.5 p-1.5">
-              <span className="text-2xl font-bold text-primary">Interelos</span>
+              <img src={logoInterelos} alt="Interelos" className="h-10 w-auto" />
             </Link>
           </div>
 
@@ -64,7 +65,7 @@ export function Header() {
           </div>
 
           {/* Desktop CTAs */}
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4 lg:items-center">
             <Link to="/cursos">
               <Button variant="outline" size="sm">
                 Ver Cursos
@@ -73,6 +74,13 @@ export function Header() {
             <Link to="/contato">
               <Button size="sm" className="bg-cta hover:bg-cta-hover text-cta-foreground">
                 Solicitar Proposta
+              </Button>
+            </Link>
+            <div className="h-6 w-px bg-border mx-2" />
+            <Link to="/area-do-aluno">
+              <Button variant="ghost" size="sm" className="gap-2">
+                <LogIn className="h-4 w-4" />
+                Area do Aluno
               </Button>
             </Link>
           </div>
@@ -106,6 +114,12 @@ export function Header() {
                 <Link to="/contato" onClick={() => setMobileMenuOpen(false)}>
                   <Button className="w-full bg-cta hover:bg-cta-hover text-cta-foreground">
                     Solicitar Proposta
+                  </Button>
+                </Link>
+                <Link to="/area-do-aluno" onClick={() => setMobileMenuOpen(false)}>
+                  <Button variant="ghost" className="w-full gap-2">
+                    <LogIn className="h-4 w-4" />
+                    Area do Aluno
                   </Button>
                 </Link>
               </div>
