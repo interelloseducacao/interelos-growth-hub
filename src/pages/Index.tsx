@@ -62,8 +62,8 @@ export default function Index() {
                 </Button>
               </Link>
               <Link to="/contato">
-                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 w-full sm:w-auto text-lg px-8 py-6 backdrop-blur-sm shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.2),0_0_40px_rgba(100,150,255,0.15)] transition-shadow">
-                  Solicitar Proposta
+                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white w-full sm:w-auto text-lg px-8 py-6 shadow-[0_0_20px_rgba(34,197,94,0.4),0_0_40px_rgba(34,197,94,0.2)] hover:shadow-[0_0_25px_rgba(34,197,94,0.5),0_0_50px_rgba(34,197,94,0.3)] transition-shadow">
+                  Fale Agora Conosco
                 </Button>
               </Link>
             </div>
