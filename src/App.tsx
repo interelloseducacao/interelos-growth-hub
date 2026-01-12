@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "@/hooks/useAuth";
 import Index from "./pages/Index";
 import Sobre from "./pages/Sobre";
 import Cursos from "./pages/Cursos";
@@ -22,29 +23,31 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/sobre" element={<Sobre />} />
-          <Route path="/cursos" element={<Cursos />} />
-          <Route path="/cursos/:slug" element={<CursoDetalhe />} />
-          <Route path="/mentorias" element={<Mentorias />} />
-          <Route path="/consultoria" element={<Consultoria />} />
-          <Route path="/cases" element={<Cases />} />
-          <Route path="/conteudos" element={<Conteudos />} />
-          <Route path="/conteudos/:slug" element={<ArtigoDetalhe />} />
-          <Route path="/eventos" element={<Eventos />} />
-          <Route path="/eventos/:slug" element={<EventoDetalhe />} />
-          <Route path="/contato" element={<Contato />} />
-          <Route path="/area-do-aluno" element={<AreaDoAluno />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
+    <AuthProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/sobre" element={<Sobre />} />
+            <Route path="/cursos" element={<Cursos />} />
+            <Route path="/cursos/:slug" element={<CursoDetalhe />} />
+            <Route path="/mentorias" element={<Mentorias />} />
+            <Route path="/consultoria" element={<Consultoria />} />
+            <Route path="/cases" element={<Cases />} />
+            <Route path="/conteudos" element={<Conteudos />} />
+            <Route path="/conteudos/:slug" element={<ArtigoDetalhe />} />
+            <Route path="/eventos" element={<Eventos />} />
+            <Route path="/eventos/:slug" element={<EventoDetalhe />} />
+            <Route path="/contato" element={<Contato />} />
+            <Route path="/area-do-aluno" element={<AreaDoAluno />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </AuthProvider>
   </QueryClientProvider>
 );
 
