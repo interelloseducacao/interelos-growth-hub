@@ -1,0 +1,118 @@
+import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+
+const navigation = [
+  { name: 'Cursos', href: '/cursos' },
+  { name: 'Mentorias', href: '/mentorias' },
+  { name: 'Consultorias', href: '/consultoria' },
+  { name: 'Cases', href: '/cases' },
+  { name: 'Conteudos', href: '/conteudos' },
+  { name: 'Eventos', href: '/eventos' },
+  { name: 'Contato', href: '/contato' },
+];
+
+export function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
+      <nav className="container-section" aria-label="Global">
+        <div className="flex items-center justify-between h-16 lg:h-20">
+          {/* Logo */}
+          <div className="flex lg:flex-1">
+            <Link to="/" className="-m-1.5 p-1.5">
+              <span className="text-2xl font-bold text-primary">Interelos</span>
+            </Link>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="flex lg:hidden">
+            <button
+              type="button"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-foreground"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <span className="sr-only">Abrir menu</span>
+              {mobileMenuOpen ? (
+                <X className="h-6 w-6" aria-hidden="true" />
+              ) : (
+                <Menu className="h-6 w-6" aria-hidden="true" />
+              )}
+            </button>
+          </div>
+
+          {/* Desktop navigation */}
+          <div className="hidden lg:flex lg:gap-x-8">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={cn(
+                  'text-sm font-medium transition-colors hover:text-primary',
+                  location.pathname === item.href
+                    ? 'text-primary'
+                    : 'text-muted-foreground'
+                )}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Desktop CTAs */}
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
+            <Link to="/cursos">
+              <Button variant="outline" size="sm">
+                Ver Cursos
+              </Button>
+            </Link>
+            <Link to="/contato">
+              <Button size="sm" className="bg-cta hover:bg-cta-hover text-cta-foreground">
+                Solicitar Proposta
+              </Button>
+            </Link>
+          </div>
+        </div>
+
+        {/* Mobile menu */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden">
+            <div className="space-y-1 px-2 pb-3 pt-2">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={cn(
+                    'block rounded-lg px-3 py-2 text-base font-medium transition-colors',
+                    location.pathname === item.href
+                      ? 'bg-secondary text-primary'
+                      : 'text-muted-foreground hover:bg-secondary hover:text-foreground'
+                  )}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className="mt-4 space-y-2 px-3">
+                <Link to="/cursos" onClick={() => setMobileMenuOpen(false)}>
+                  <Button variant="outline" className="w-full">
+                    Ver Cursos
+                  </Button>
+                </Link>
+                <Link to="/contato" onClick={() => setMobileMenuOpen(false)}>
+                  <Button className="w-full bg-cta hover:bg-cta-hover text-cta-foreground">
+                    Solicitar Proposta
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
+      </nav>
+    </header>
+  );
+}
