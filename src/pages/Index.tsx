@@ -37,8 +37,8 @@ export default function Index() {
 
         <div className="container-section relative z-10 py-20 md:py-28">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 animate-fade-in">
-              <span className="w-2 h-2 rounded-full bg-cta animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 animate-fade-in shadow-[0_0_20px_rgba(255,255,255,0.15),0_0_40px_rgba(100,150,255,0.1)]">
+              <span className="w-2 h-2 rounded-full bg-cta animate-pulse shadow-[0_0_8px_rgba(var(--cta))]" />
               <span className="text-sm font-medium text-white/90">20+ anos formando líderes de mercado</span>
             </div>
             
