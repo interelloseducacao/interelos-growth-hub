@@ -29,19 +29,14 @@ const values = [
 
 const team = [
   {
-    name: 'Prof. Carlos Silva',
-    role: 'Diretor Academico',
-    bio: 'Doutor em Administracao com mais de 25 anos de experiencia em consultoria estrategica. Atuou em projetos para empresas de diversos portes e setores.',
+    name: 'Prof. Anderson Claudino',
+    role: 'Especialista em Gestão Estratégica',
+    bio: 'Especialista em Gestão Estratégica de Negócios e Valuation. Consultor Empresarial e empreendedor em diversas empresas.',
   },
   {
-    name: 'Profa. Ana Costa',
-    role: 'Consultora Financeira',
-    bio: 'MBA em Financas Corporativas, com passagem por diretorias financeiras de empresas nacionais e multinacionais. Especialista em reestruturacao.',
-  },
-  {
-    name: 'Prof. Roberto Mendes',
-    role: 'Mentor de Startups',
-    bio: 'Empreendedor serial e investidor-anjo. Ja mentorou mais de 100 startups e participa de conselhos de empresas em crescimento.',
+    name: 'Luilson Gomes',
+    role: 'Especialista em Negócios Digitais',
+    bio: 'Empreendedor com MBA pela FGV em Negócios Digitais. Ampla experiência em M&A, Investidor em Startups e Captação de Recursos.',
   },
 ];
 
@@ -146,7 +141,7 @@ export default function Sobre() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {team.map((member, index) => (
               <div key={index} className="card-base p-6 text-center">
                 <div className="w-24 h-24 rounded-full bg-primary/10 mx-auto mb-4 flex items-center justify-center">
