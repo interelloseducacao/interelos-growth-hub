@@ -20,7 +20,9 @@ import {
   MapPin,
   CheckCircle,
   MessageCircle,
-  Clock
+  Clock,
+  Quote,
+  Star
 } from 'lucide-react';
 
 export default function Index() {
@@ -324,6 +326,109 @@ export default function Index() {
               </Button>
             </Link>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="section-padding bg-background">
+        <div className="container-section">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <motion.h2 
+              className="text-3xl md:text-4xl font-bold text-foreground mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              O Que Nossos Alunos Dizem
+            </motion.h2>
+            <motion.p 
+              className="text-lg text-muted-foreground"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              Resultados reais de alunos que transformaram seus negócios após o Curso de Precificação
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Carla Mendes",
+                role: "Proprietária de Restaurante",
+                image: "CM",
+                testimonial: "Antes do curso, eu definia preços no 'achismo'. Hoje, minha margem de lucro aumentou 35% sem perder clientes. Foi transformador!",
+                result: "+35% de margem"
+              },
+              {
+                name: "Roberto Silva",
+                role: "Dono de Empresa de Facilities",
+                image: "RS",
+                testimonial: "Consegui fechar contratos maiores porque aprendi a mostrar o valor real dos meus serviços. Meu faturamento dobrou em 8 meses.",
+                result: "2x no faturamento"
+              },
+              {
+                name: "Fernanda Costa",
+                role: "Consultora de Marketing",
+                image: "FC",
+                testimonial: "Parei de cobrar por hora e passei a precificar por valor entregue. Meus projetos agora rendem 60% mais do que antes.",
+                result: "+60% por projeto"
+              },
+              {
+                name: "Marcelo Almeida",
+                role: "Dono de Gráfica",
+                image: "MA",
+                testimonial: "Identifiquei produtos que davam prejuízo e ajustei toda minha tabela. Em 6 meses, saí do vermelho e comecei a lucrar de verdade.",
+                result: "Saiu do prejuízo"
+              },
+              {
+                name: "Juliana Teixeira",
+                role: "Arquiteta",
+                image: "JT",
+                testimonial: "O curso me deu segurança para cobrar o que meu trabalho vale. Hoje atendo menos clientes, mas com projetos muito mais rentáveis.",
+                result: "+80% ticket médio"
+              }
+            ].map((testimonial, index) => (
+              <motion.div
+                key={index}
+                className="bg-card rounded-xl p-6 border border-border hover:shadow-lg transition-all duration-300 flex flex-col"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+              >
+                <Quote className="h-8 w-8 text-primary/20 mb-4" />
+                
+                <p className="text-muted-foreground mb-6 flex-grow italic">
+                  "{testimonial.testimonial}"
+                </p>
+
+                <div className="flex items-center gap-2 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+
+                <div className="flex items-center justify-between pt-4 border-t border-border">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-semibold text-sm">
+                      {testimonial.image}
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground text-sm">{testimonial.name}</p>
+                      <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                    </div>
+                  </div>
+                  <div className="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full">
+                    {testimonial.result}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
