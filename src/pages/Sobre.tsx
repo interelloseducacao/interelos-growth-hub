@@ -53,7 +53,7 @@ export default function Sobre() {
         <div className="container-section">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-              Sobre a Interelos
+              Sobre a Interellos
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/90">
               Ha mais de 20 anos desenvolvendo empreendedores e empresas com metodologias praticas e foco em resultados.
@@ -75,7 +75,7 @@ export default function Sobre() {
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  A Interelos nasceu da uniao de experiencia academica e pratica corporativa, 
+                  A Interellos nasceu da uniao de experiencia academica e pratica corporativa, 
                   com o proposito de democratizar o acesso a conhecimento de gestao de alta qualidade.
                 </p>
                 <p>
@@ -249,7 +249,7 @@ export default function Sobre() {
             </Link>
             <Link to="/contato">
               <Button size="lg" variant="outline">
-                Falar com a Interelos
+                Falar com a Interellos
               </Button>
             </Link>
           </div>

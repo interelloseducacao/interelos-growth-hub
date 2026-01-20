@@ -92,6 +92,43 @@ export default function Index() {
       {/* Social Proof */}
       <SocialProof />
 
+      {/* Sobre - Mini Institucional */}
+      <section className="section-padding bg-secondary/30">
+        <div className="container-section">
+          <motion.div 
+            className="max-w-4xl mx-auto text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Sobre a Interellos
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              A <span className="font-semibold text-foreground">Interellos</span> surgiu de uma necessidade 
+              do mercado corporativo em solucionar as principais dores do empreendedor. Com profissionais 
+              do mercado corporativo e acadêmico, unificamos <span className="font-semibold text-foreground">teoria e prática</span> com 
+              uma metodologia de aprendizado <span className="font-semibold text-foreground">personalizado e validado</span>.
+            </p>
+            <motion.div 
+              className="mt-8"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <Link to="/sobre">
+                <Button variant="outline" size="lg">
+                  Conheça nossa história
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Solutions Section */}
       <section className="section-padding bg-background">
         <div className="container-section">

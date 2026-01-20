@@ -52,7 +52,7 @@ export default function Contato() {
               Contato
             </h1>
             <p className="text-lg text-primary-foreground/90">
-              Fale com a Interelos. Estamos prontos para ajudar voce e sua empresa.
+              Fale com a Interellos. Estamos prontos para ajudar voce e sua empresa.
             </p>
           </div>
         </div>
@@ -188,10 +188,10 @@ export default function Contato() {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">E-mail</h3>
                     <a 
-                      href="mailto:contato@interelos.com.br"
+                      href="mailto:contato@interellos.com.br"
                       className="text-muted-foreground hover:text-primary"
                     >
-                      contato@interelos.com.br
+                      contato@interellos.com.br
                     </a>
                   </div>
                 </div>

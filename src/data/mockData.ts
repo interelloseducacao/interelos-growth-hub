@@ -313,7 +313,7 @@ export const events: Event[] = [
     id: '3',
     slug: 'cafe-com-mentor',
     title: 'Cafe com Mentor',
-    description: 'Sessao informal de mentoria com especialistas da Interelos.',
+    description: 'Sessao informal de mentoria com especialistas da Interellos.',
     shortDescription: 'Mentoria em formato descontraido.',
     modality: 'presencial',
     date: '22 de Maio de 2026',
@@ -369,7 +369,7 @@ export const articles: Article[] = [
     excerpt: 'Guia pratico para definir precos que refletem o valor entregue ao cliente.',
     content: 'Conteudo completo do artigo sobre precificacao de servicos...',
     category: 'Precificacao',
-    author: 'Equipe Interelos',
+    author: 'Equipe Interellos',
     date: '15 de Janeiro de 2025',
     readTime: '8 min',
     featured: true
@@ -381,7 +381,7 @@ export const articles: Article[] = [
     excerpt: 'Identifique e corrija os principais erros que comprometem a saude financeira.',
     content: 'Conteudo completo do artigo sobre gestao financeira...',
     category: 'Gestao',
-    author: 'Equipe Interelos',
+    author: 'Equipe Interellos',
     date: '10 de Janeiro de 2025',
     readTime: '6 min',
     featured: true
@@ -393,7 +393,7 @@ export const articles: Article[] = [
     excerpt: 'Metodologia pratica para construir o plano estrategico da sua empresa.',
     content: 'Conteudo completo do artigo sobre planejamento estrategico...',
     category: 'Estrategia',
-    author: 'Equipe Interelos',
+    author: 'Equipe Interellos',
     date: '05 de Janeiro de 2025',
     readTime: '10 min',
     featured: true
@@ -405,7 +405,7 @@ export const articles: Article[] = [
     excerpt: 'Entenda as diferencas e saiba qual estrategia e mais adequada para seu momento.',
     content: 'Conteudo completo do artigo sobre crescimento...',
     category: 'Crescimento',
-    author: 'Equipe Interelos',
+    author: 'Equipe Interellos',
     date: '28 de Dezembro de 2024',
     readTime: '7 min'
   },
@@ -416,7 +416,7 @@ export const articles: Article[] = [
     excerpt: 'Estrategias de inovacao para empresas em diferentes estagios de maturidade.',
     content: 'Conteudo completo do artigo sobre inovacao...',
     category: 'Inovacao',
-    author: 'Equipe Interelos',
+    author: 'Equipe Interellos',
     date: '20 de Dezembro de 2024',
     readTime: '9 min'
   },
@@ -427,7 +427,7 @@ export const articles: Article[] = [
     excerpt: 'Por que tantos planos estrategicos falham e como evitar as armadilhas.',
     content: 'Conteudo completo do artigo sobre execucao...',
     category: 'Execucao',
-    author: 'Equipe Interelos',
+    author: 'Equipe Interellos',
     date: '15 de Dezembro de 2024',
     readTime: '8 min'
   }

@@ -72,7 +72,7 @@ export default function Instalar() {
 
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Instale o App da{' '}
-                <span className="text-gradient">Interelos</span>
+                <span className="text-gradient">Interellos</span>
               </h1>
 
               <p className="text-xl text-muted-foreground mb-10">

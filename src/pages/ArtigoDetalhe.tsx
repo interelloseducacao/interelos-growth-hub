@@ -117,7 +117,7 @@ export default function ArtigoDetalhe() {
                   </Link>
                   <Link to="/contato">
                     <Button variant="outline">
-                      Falar com a Interelos
+                      Falar com a Interellos
                     </Button>
                   </Link>
                 </div>
@@ -137,11 +137,11 @@ export default function ArtigoDetalhe() {
                     </div>
                     <div>
                       <p className="font-medium text-foreground">{article.author}</p>
-                      <p className="text-sm text-muted-foreground">Interelos</p>
+                      <p className="text-sm text-muted-foreground">Interellos</p>
                     </div>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Conteudo produzido pela equipe de especialistas da Interelos.
+                    Conteudo produzido pela equipe de especialistas da Interellos.
                   </p>
                 </div>
 

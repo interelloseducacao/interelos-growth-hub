@@ -26,7 +26,7 @@ export function Header() {
           {/* Logo */}
           <div className="flex lg:flex-1">
             <Link to="/" className="-m-1.5 p-1.5">
-              <img src={logoInterelos} alt="Interelos" className="h-10 w-auto" />
+              <img src={logoInterelos} alt="Interellos" className="h-10 w-auto" />
             </Link>
           </div>
 

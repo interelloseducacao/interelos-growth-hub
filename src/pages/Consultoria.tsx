@@ -164,7 +164,7 @@ export default function Consultoria() {
               </div>
             </div>
             <div className="bg-primary rounded-xl p-8 text-primary-foreground">
-              <h3 className="text-2xl font-bold mb-4">Por que a Interelos</h3>
+              <h3 className="text-2xl font-bold mb-4">Por que a Interellos</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-cta flex items-center justify-center flex-shrink-0 mt-0.5">
