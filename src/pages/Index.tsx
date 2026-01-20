@@ -386,9 +386,9 @@ export default function Index() {
       {/* CTA Section with Form - Redesigned */}
       <section className="relative section-padding overflow-hidden bg-gradient-to-br from-primary via-primary to-accent">
         {/* Subtle decorative element */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-3xl -translate-y-1/3 translate-x-1/3" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cta/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3" />
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full -translate-y-1/3 translate-x-1/3" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cta/10 rounded-full translate-y-1/3 -translate-x-1/3" />
         </div>
         
         <div className="container-section relative z-10">
@@ -418,9 +418,9 @@ export default function Index() {
               {/* Benefits List */}
               <div className="space-y-4 mb-10">
                 {[
-                  "Diagnóstico gratuito e sem compromisso",
-                  "Soluções personalizadas para seu momento",
-                  "Parcelamento em até 10x sem juros"
+                  "Acesso a cursos práticos e atualizados",
+                  "Aulas com professores especialistas",
+                  "Certificado reconhecido pelo mercado"
                 ].map((benefit, index) => (
                   <motion.div 
                     key={index}
@@ -477,9 +477,9 @@ export default function Index() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
               >
-                <MessageCircle className="h-5 w-5 text-cta" />
+                <GraduationCap className="h-5 w-5 text-cta" />
                 <h3 className="text-xl md:text-2xl font-bold text-foreground">
-                  Solicite seu diagnóstico gratuito
+                  Garanta sua vaga nos próximos cursos
                 </h3>
               </motion.div>
               
