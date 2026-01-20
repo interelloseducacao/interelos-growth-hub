@@ -538,31 +538,31 @@ export default function Index() {
             {/* Left Column - Value Proposition */}
             <div className="text-white">
               <motion.h2 
-                className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight"
+                className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight text-white"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
               >
-                Vamos conversar sobre o futuro do seu negócio?
+                Desenvolva você e transforme seu negócio
               </motion.h2>
               
               <motion.p 
-                className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed"
+                className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
-                Conte-nos sobre seus desafios. Nossa equipe entrará em contato em até 24 horas para apresentar a melhor solução.
+                Nossa metodologia une teoria e prática com uma experiência de aprendizado personalizada, diferente dos cursos tradicionais.
               </motion.p>
               
               {/* Benefits List */}
               <div className="space-y-4 mb-10">
                 {[
-                  "Acesso a cursos práticos e atualizados",
-                  "Aulas com professores especialistas",
-                  "Certificado reconhecido pelo mercado"
+                  "Metodologia exclusiva aplicada ao seu negócio",
+                  "Experiência de aprendizado personalizada",
+                  "Acompanhamento com professores especialistas"
                 ].map((benefit, index) => (
                   <motion.div 
                     key={index}
@@ -579,7 +579,7 @@ export default function Index() {
                     >
                       <CheckCircle className="h-4 w-4 text-cta-foreground" />
                     </motion.div>
-                    <span className="text-white/90 text-lg">{benefit}</span>
+                    <span className="text-white text-lg">{benefit}</span>
                   </motion.div>
                 ))}
               </div>
