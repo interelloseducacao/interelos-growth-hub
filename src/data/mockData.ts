@@ -328,6 +328,17 @@ export const events: Event[] = [
 export const cases: Case[] = [
   {
     id: '1',
+    slug: 'empresa-facilities-precificacao',
+    company: 'Empresa de Facilities',
+    industry: 'Facilities',
+    challenge: 'Margens baixas e dificuldade em precificar contratos de forma competitiva, perdendo oportunidades de vendas por falta de assertividade nas propostas.',
+    approach: 'Treinamento completo em precificação estratégica para o setor de facilities, com metodologia prática para cálculo de custos, definição de margens e elaboração de propostas comerciais vencedoras.',
+    result: 'Aumento de 28% na margem dos contratos e participação em 40% mais processos de vendas com propostas assertivas e competitivas.',
+    metrics: ['+28% margem', '+40% processos', '6 meses'],
+    featured: true
+  },
+  {
+    id: '2',
     slug: 'industria-transformacao-digital',
     company: 'Industria Metalurgica Regional',
     industry: 'Industria',
@@ -338,7 +349,7 @@ export const cases: Case[] = [
     featured: true
   },
   {
-    id: '2',
+    id: '3',
     slug: 'varejo-expansao-nacional',
     company: 'Rede de Varejo Especializado',
     industry: 'Varejo',
@@ -346,17 +357,6 @@ export const cases: Case[] = [
     approach: 'Estruturacao de processos, desenvolvimento de liderancas regionais e planejamento de expansao.',
     result: 'Abertura de 12 novas lojas em 2 anos com ROI positivo a partir do 8o mes.',
     metrics: ['12 novas lojas', 'ROI em 8 meses', '2 anos'],
-    featured: true
-  },
-  {
-    id: '3',
-    slug: 'servicos-profissionalizacao',
-    company: 'Escritorio de Servicos Profissionais',
-    industry: 'Servicos',
-    challenge: 'Dependencia excessiva dos socios fundadores e dificuldade em delegar decisoes.',
-    approach: 'Mentoria para formacao de novos lideres, criacao de processos decisorios e governanca.',
-    result: 'Reducao de 60% na carga dos socios e crescimento de 35% no faturamento.',
-    metrics: ['-60% carga socios', '+35% faturamento'],
     featured: true
   }
 ];
