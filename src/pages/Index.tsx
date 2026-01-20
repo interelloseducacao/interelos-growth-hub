@@ -238,31 +238,92 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Featured Courses/Events */}
+      {/* Experiência Institucional */}
       <section className="section-padding bg-background">
         <div className="container-section">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Proximas Oportunidades
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Cursos e eventos com inscricoes abertas
-              </p>
-            </div>
-            <Link to="/cursos" className="mt-4 md:mt-0">
-              <Button variant="outline">
-                Ver todos os cursos
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <motion.h2 
+              className="text-3xl md:text-4xl font-bold text-foreground mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              Experiência que Transforma Empresas
+            </motion.h2>
+            <motion.p 
+              className="text-lg text-muted-foreground"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              Há mais de 20 anos combinamos vivência acadêmica e corporativa para desenvolver soluções que impulsionam o crescimento sustentável de empresas em todo o Brasil.
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: Briefcase,
+                title: "Gestão Empresarial",
+                description: "Estruturação de processos, planejamento estratégico e governança corporativa para empresas de todos os portes.",
+                color: "blue"
+              },
+              {
+                icon: Users,
+                title: "Desenvolvimento de Líderes",
+                description: "Formação de gestores e equipes de alta performance com metodologias práticas e foco em resultados.",
+                color: "indigo"
+              },
+              {
+                icon: GraduationCap,
+                title: "Vivência Acadêmica",
+                description: "Professores com experiência em grandes instituições, trazendo rigor metodológico e conhecimento atualizado.",
+                color: "sky"
+              },
+              {
+                icon: Clock,
+                title: "Atuação Corporativa",
+                description: "Consultoria em empresas de pequeno a grande porte, com resultados comprovados em diversos setores.",
+                color: "emerald"
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                className="bg-card rounded-xl p-6 border border-border hover:shadow-lg transition-shadow"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <motion.div 
+                  className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-${item.color}-100 mb-4`}
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  <item.icon className={`h-6 w-6 text-${item.color}-600`} />
+                </motion.div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div 
+            className="mt-12 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <Link to="/sobre">
+              <Button variant="outline" size="lg">
+                Conheça nossa história
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredCourses.slice(0, 6).map((course) => (
-              <CourseCard key={course.id} course={course} />
-            ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
