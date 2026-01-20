@@ -17,8 +17,8 @@ export default defineConfig(({ mode }) => ({
       registerType: "autoUpdate",
       includeAssets: ["favicon.ico", "pwa-icon-512.png"],
       manifest: {
-        name: "Interelos - Capacitação Empresarial",
-        short_name: "Interelos",
+        name: "Interellos - Capacitação Empresarial",
+        short_name: "Interellos",
         description: "Plataforma de cursos, mentorias e consultoria empresarial",
         theme_color: "#1E3A5F",
         background_color: "#F8FAFC",

@@ -27,7 +27,7 @@ const social = [
 ];
 
 const WHATSAPP_NUMBER = '5511999999999'; // Substitua pelo número real
-const WHATSAPP_MESSAGE = 'Olá! Gostaria de saber mais sobre os cursos da Interelos.';
+const WHATSAPP_MESSAGE = 'Olá! Gostaria de saber mais sobre os cursos da Interellos.';
 
 export function Footer() {
   return (
@@ -37,7 +37,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="text-2xl font-bold">
-              Interelos
+              Interellos
             </Link>
             <p className="mt-4 text-sm text-primary-foreground/80">
               Desenvolvimento e aperfeicoamento para empreendedores e empresas.
@@ -51,7 +51,7 @@ export function Footer() {
             </div>
             <div className="mt-2 flex items-center gap-2 text-sm text-primary-foreground/80">
               <Mail className="h-4 w-4 flex-shrink-0" />
-              <span>contato@interelos.com.br</span>
+              <span>contato@interellos.com.br</span>
             </div>
           </div>
 
@@ -136,7 +136,7 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-primary-foreground/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-primary-foreground/60">
-              2025 Interelos. Todos os direitos reservados.
+              2025 Interellos. Todos os direitos reservados.
             </p>
             <div className="flex gap-6">
               {navigation.legal.map((item) => (
