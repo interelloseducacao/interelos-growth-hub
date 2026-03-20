@@ -78,7 +78,7 @@ export function Header() {
               </Button>
             </Link>
             <Link to="/contato">
-              <Button size="sm" className="bg-cta hover:bg-cta-hover text-cta-foreground">
+              <Button size="sm" className="bg-[hsl(145,70%,42%)] hover:bg-[hsl(145,70%,36%)] text-white shadow-[0_0_12px_hsl(145,70%,42%/0.4)] hover:shadow-[0_0_18px_hsl(145,70%,42%/0.5)] transition-all duration-200">
                 Solicitar Proposta
               </Button>
             </Link>
