@@ -237,9 +237,17 @@ export default function CursoDetalhe() {
                     )}
                   </div>
 
-                  <Button className="w-full bg-cta hover:bg-cta-hover text-cta-foreground mb-3">
-                    Quero Participar
-                  </Button>
+                  {course.slug === 'precificacao-empreendedores-facilities' ? (
+                    <a href="https://lp.interellos.com.br/precificacao-blindada-empresas-facilities/" target="_blank" rel="noopener noreferrer">
+                      <Button className="w-full bg-cta hover:bg-cta-hover text-cta-foreground mb-3">
+                        Quero Participar
+                      </Button>
+                    </a>
+                  ) : (
+                    <Button className="w-full bg-cta hover:bg-cta-hover text-cta-foreground mb-3">
+                      Quero Participar
+                    </Button>
+                  )}
                   <Link to="/contato">
                     <Button variant="outline" className="w-full">
                       Solicitar Informacoes
