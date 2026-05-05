@@ -1,5 +1,7 @@
 import { Layout } from '@/components/layout/Layout';
 import { CaseCard } from '@/components/cards/CaseCard';
+import { InstitutionalCards } from '@/components/sections/InstitutionalCards';
+import { Testimonials } from '@/components/sections/Testimonials';
 import { Button } from '@/components/ui/button';
 import { cases } from '@/data/mockData';
 import { Link } from 'react-router-dom';
@@ -31,6 +33,8 @@ export default function Cases() {
           </div>
         </div>
       </section>
+
+      <InstitutionalCards variant="cases" />
 
       {/* Logos/Industries */}
       <section className="py-12 bg-secondary">
@@ -69,6 +73,12 @@ export default function Cases() {
           </div>
         </div>
       </section>
+
+      <Testimonials
+        badge="Quem aplicou recomenda"
+        title="Resultados que reforçam nossa metodologia"
+        subtitle="Depoimentos de alunos e empreendedores que transformaram preço, margem e posicionamento"
+      />
 
       {/* CTA */}
       <section className="section-padding bg-primary">
