@@ -16,16 +16,20 @@
     --popover: 0 0% 100%;
     --popover-foreground: 230 25% 12%;
 
-    /* Primary - Interellos brand blue */
-    --primary: 220 75% 42%;
+    /* Primary - Interellos metallic blue (from logo) */
+    --primary: 215 78% 48%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 225 85% 60%;
+    --primary-glow: 210 90% 65%;
 
-    /* Brand purple/violet from logo */
-    --brand-purple: 270 55% 50%;
-    --brand-purple-glow: 275 70% 65%;
+    /* Brand - Metallic purple from logo */
+    --brand-purple: 275 55% 52%;
+    --brand-purple-glow: 280 75% 68%;
 
-    /* Secondary - Light blue-violet tint */
+    /* Solid brand variants (regular, non-metallic) */
+    --brand-blue-solid: 220 85% 50%;
+    --brand-purple-solid: 275 70% 55%;
+
+    /* Secondary - Soft blue-violet tint */
     --secondary: 230 35% 96%;
     --secondary-foreground: 230 25% 12%;
 
@@ -33,11 +37,11 @@
     --muted: 230 25% 96%;
     --muted-foreground: 230 12% 45%;
 
-    /* Accent - Brand purple for accents */
-    --accent: 270 55% 50%;
+    /* Accent - Brand purple */
+    --accent: 275 55% 52%;
     --accent-foreground: 0 0% 100%;
 
-    /* CTA - Vibrant green for high contrast (per brand) */
+    /* CTA - Vibrant green for high contrast */
     --cta: 145 70% 42%;
     --cta-foreground: 0 0% 100%;
     --cta-hover: 145 70% 36%;
@@ -55,16 +59,17 @@
 
     --border: 230 20% 90%;
     --input: 230 20% 90%;
-    --ring: 270 55% 50%;
+    --ring: 275 55% 52%;
 
     --radius: 0.5rem;
 
-    /* Gradients - blue → purple brand identity */
-    --gradient-hero: linear-gradient(135deg, hsl(220 75% 22%) 0%, hsl(250 60% 30%) 50%, hsl(275 60% 35%) 100%);
-    --gradient-brand: linear-gradient(135deg, hsl(220 75% 45%) 0%, hsl(270 60% 55%) 100%);
+    /* Gradients - Metallic blue → purple identity from logo */
+    --gradient-hero: linear-gradient(135deg, hsl(215 78% 22%) 0%, hsl(245 60% 30%) 50%, hsl(275 55% 32%) 100%);
+    --gradient-brand: linear-gradient(135deg, hsl(215 78% 48%) 0%, hsl(275 55% 52%) 100%);
+    --gradient-brand-metallic: linear-gradient(135deg, hsl(210 80% 55%) 0%, hsl(220 70% 45%) 35%, hsl(260 55% 48%) 65%, hsl(275 60% 55%) 100%);
     --gradient-cta: linear-gradient(135deg, hsl(145 70% 42%) 0%, hsl(160 70% 45%) 100%);
     --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(230 35% 98%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(220 75% 42%) 0%, hsl(270 55% 50%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(215 78% 48%) 0%, hsl(275 55% 52%) 100%);
 
     /* Shadows with brand tint */
     --shadow-sm: 0 1px 2px 0 hsl(230 25% 12% / 0.05);
@@ -72,8 +77,8 @@
     --shadow-lg: 0 10px 15px -3px hsl(230 25% 12% / 0.1), 0 4px 6px -4px hsl(230 25% 12% / 0.1);
     --shadow-xl: 0 20px 25px -5px hsl(230 25% 12% / 0.1), 0 8px 10px -6px hsl(230 25% 12% / 0.1);
     --shadow-card: 0 4px 20px -2px hsl(230 25% 12% / 0.08);
-    --shadow-card-hover: 0 12px 30px -4px hsl(270 55% 50% / 0.18);
-    --shadow-glow: 0 0 40px -8px hsl(270 60% 55% / 0.45);
+    --shadow-card-hover: 0 12px 30px -4px hsl(275 55% 52% / 0.18);
+    --shadow-glow: 0 0 40px -8px hsl(275 60% 55% / 0.45);
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
