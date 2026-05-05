@@ -16,7 +16,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
         </span>
       </div>
 
-      <h3 className="text-lg font-semibold text-foreground mb-2 line-clamp-2">
+      <h3 className="text-lg font-bold text-gradient-brand mb-2 line-clamp-2">
         {article.title}
       </h3>
 

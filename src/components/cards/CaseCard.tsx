@@ -15,7 +15,7 @@ export function CaseCard({ caseItem }: CaseCardProps) {
           <Building2 className="h-5 w-5 text-primary" />
         </div>
         <div>
-          <h4 className="font-medium text-foreground">{caseItem.company}</h4>
+          <h4 className="font-bold text-gradient-brand">{caseItem.company}</h4>
           <span className="text-xs text-muted-foreground">{caseItem.industry}</span>
         </div>
       </div>
