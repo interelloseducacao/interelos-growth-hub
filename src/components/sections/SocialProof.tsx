@@ -3,7 +3,7 @@ import { Award, Users, Building2, GraduationCap } from 'lucide-react';
 const stats = [
   {
     icon: Award,
-    value: '20+',
+    value: '30+',
     label: 'Anos de experiencia',
     description: 'Academica e corporativa',
   },
