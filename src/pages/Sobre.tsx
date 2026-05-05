@@ -259,60 +259,96 @@ export default function Sobre() {
       </section>
 
       {/* Methodology */}
-      <section className="section-padding bg-secondary">
-        <div className="container-section">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Nossa Metodologia
-              </h2>
-              <div className="space-y-4 text-muted-foreground">
-                <p>
-                  Desenvolvemos uma abordagem propria que combina o rigor conceitual 
-                  da academia com a praticidade exigida pelo mercado.
-                </p>
-                <p>
-                  Cada programa e desenhado para que o participante saia com 
-                  ferramentas, frameworks e planos de acao prontos para implementar.
-                </p>
-              </div>
-              <ul className="mt-6 space-y-3">
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary mt-2" />
-                  <span className="text-foreground">Diagnostico do cenario atual</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary mt-2" />
-                  <span className="text-foreground">Conteudo aplicado e casos reais</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary mt-2" />
-                  <span className="text-foreground">Ferramentas prontas para uso</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary mt-2" />
-                  <span className="text-foreground">Acompanhamento pos-programa</span>
-                </li>
-              </ul>
+      <section className="section-padding bg-gradient-to-b from-secondary/40 via-background to-secondary/40 relative overflow-hidden">
+        {/* Decorative blurred orbs */}
+        <div className="pointer-events-none absolute -top-24 -right-24 w-96 h-96 rounded-full bg-primary/15 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-[hsl(var(--brand-purple))]/20 blur-3xl" />
+
+        <div className="container-section relative">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-5">
+              <Compass className="h-3.5 w-3.5" />
+              Como Trabalhamos
             </div>
-            <div className="bg-primary rounded-xl p-8 text-primary-foreground">
-              <h3 className="text-2xl font-bold mb-4">Resultados Comprovados</h3>
-              <div className="grid grid-cols-2 gap-6">
-                <div>
-                  <div className="text-4xl font-bold mb-1">92%</div>
-                  <p className="text-sm text-primary-foreground/80">de satisfacao dos alunos</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-gradient-brand">Nossa Metodologia</span>
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Rigor acadêmico aliado à praticidade que o mercado exige
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            {/* Methodology card */}
+            <div className="relative rounded-2xl p-[1px] bg-gradient-to-br from-primary/40 via-[hsl(var(--brand-purple))]/40 to-transparent shadow-[0_10px_40px_-12px_hsl(var(--brand-purple)/0.35)]">
+              <div className="rounded-2xl bg-card/95 backdrop-blur-sm p-8 md:p-10 h-full">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-[hsl(var(--brand-purple))] flex items-center justify-center shadow-[0_0_20px_hsl(var(--brand-purple)/0.45)]">
+                    <Lightbulb className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold">
+                    <span className="text-gradient-brand">Abordagem Própria</span>
+                  </h3>
                 </div>
-                <div>
-                  <div className="text-4xl font-bold mb-1">85%</div>
-                  <p className="text-sm text-primary-foreground/80">aplicam em ate 30 dias</p>
+                <div className="space-y-4 text-muted-foreground border-l-2 border-primary/30 pl-4 mb-6">
+                  <p>
+                    Desenvolvemos uma abordagem própria que combina o rigor conceitual
+                    da academia com a praticidade exigida pelo mercado.
+                  </p>
+                  <p>
+                    Cada programa é desenhado para que o participante saia com
+                    ferramentas, frameworks e planos de ação prontos para implementar.
+                  </p>
                 </div>
-                <div>
-                  <div className="text-4xl font-bold mb-1">78%</div>
-                  <p className="text-sm text-primary-foreground/80">recomendam para outros</p>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold mb-1">4.8</div>
-                  <p className="text-sm text-primary-foreground/80">nota media (de 5)</p>
+                <ul className="space-y-3">
+                  {[
+                    'Diagnóstico do cenário atual',
+                    'Conteúdo aplicado e casos reais',
+                    'Ferramentas prontas para uso',
+                    'Acompanhamento pós-programa',
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 group">
+                      <div className="mt-1 w-6 h-6 rounded-md bg-gradient-to-br from-primary/20 to-[hsl(var(--brand-purple))]/20 flex items-center justify-center shrink-0 group-hover:from-primary/40 group-hover:to-[hsl(var(--brand-purple))]/40 transition-colors">
+                        <span className="text-xs font-bold text-primary">0{i + 1}</span>
+                      </div>
+                      <span className="text-foreground font-medium pt-0.5">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Results card */}
+            <div className="relative rounded-2xl p-[1px] bg-gradient-to-br from-[hsl(var(--brand-purple))]/50 via-primary/40 to-transparent shadow-[0_10px_40px_-12px_hsl(var(--brand-purple)/0.45)]">
+              <div className="rounded-2xl bg-gradient-to-br from-primary to-[hsl(var(--brand-purple))] p-8 md:p-10 text-primary-foreground h-full relative overflow-hidden">
+                {/* Decorative inner orbs */}
+                <div className="pointer-events-none absolute -top-12 -right-12 w-48 h-48 rounded-full bg-white/10 blur-3xl" />
+                <div className="pointer-events-none absolute -bottom-12 -left-12 w-48 h-48 rounded-full bg-white/10 blur-3xl" />
+
+                <div className="relative">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur-sm text-white text-xs font-semibold uppercase tracking-wider mb-5">
+                    <Award className="h-3.5 w-3.5" />
+                    Comprovados
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-8">Resultados que falam por si</h3>
+                  <div className="grid grid-cols-2 gap-6">
+                    {[
+                      { value: '92%', label: 'de satisfação dos alunos' },
+                      { value: '85%', label: 'aplicam em até 30 dias' },
+                      { value: '78%', label: 'recomendam para outros' },
+                      { value: '4.8', label: 'nota média (de 5)' },
+                    ].map((stat, i) => (
+                      <div
+                        key={i}
+                        className="rounded-xl bg-white/10 backdrop-blur-sm p-4 border border-white/15 hover:bg-white/15 transition-colors"
+                      >
+                        <div className="text-4xl md:text-5xl font-bold mb-1 text-white drop-shadow-[0_2px_8px_rgba(255,255,255,0.3)]">
+                          {stat.value}
+                        </div>
+                        <p className="text-sm text-white/85">{stat.label}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
