@@ -40,14 +40,15 @@ const defaultSteps: Step[] = [
   },
 ];
 
-export function HowItWorks({ 
-  title = 'Como Funciona', 
+export function HowItWorks({
+  title = 'Como Funciona',
   subtitle = 'Um processo estruturado para garantir resultados',
-  steps = defaultSteps 
+  steps = defaultSteps,
 }: HowItWorksProps) {
   return (
-    <section className="section-padding bg-background">
-      <div className="container-section">
+    <section className="section-padding bg-gradient-to-b from-background via-secondary/30 to-background relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
+      <div className="container-section relative">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             {title}
@@ -57,7 +58,7 @@ export function HowItWorks({
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {steps.map((step, index) => (
             <div
               key={index}
@@ -66,12 +67,12 @@ export function HowItWorks({
             >
               {/* Connector line */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-12 left-1/2 w-full h-0.5 bg-border" />
+                <div className="hidden lg:block absolute top-12 left-1/2 w-full h-px bg-gradient-to-r from-primary/40 to-brand-purple/30" />
               )}
 
-              <div className="relative flex flex-col items-center text-center">
-                <div className="relative z-10 flex items-center justify-center w-24 h-24 rounded-full bg-primary/10 mb-6">
-                  <span className="absolute -top-2 -right-2 w-8 h-8 flex items-center justify-center text-sm font-bold text-primary-foreground bg-primary rounded-full">
+              <div className="relative flex flex-col items-center text-center rounded-lg border border-border bg-card p-6 h-full shadow-card">
+                <div className="relative z-10 flex items-center justify-center w-24 h-24 rounded-lg bg-gradient-to-br from-primary/15 to-brand-purple/10 border border-primary/15 mb-6">
+                  <span className="absolute -top-2 -right-2 w-8 h-8 flex items-center justify-center text-sm font-bold text-primary-foreground bg-primary rounded-lg shadow-[0_0_18px_hsl(var(--primary)/0.35)]">
                     {step.number}
                   </span>
                   <step.icon className="h-10 w-10 text-primary" />
