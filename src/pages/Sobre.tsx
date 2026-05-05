@@ -2,7 +2,7 @@ import { Layout } from '@/components/layout/Layout';
 import { SocialProof } from '@/components/sections/SocialProof';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Target, Lightbulb, Users, Award } from 'lucide-react';
+import { ArrowRight, Target, Lightbulb, Users, Award, Sparkles, Quote, Compass, Eye } from 'lucide-react';
 
 const values = [
   {
@@ -61,39 +61,70 @@ export default function Sobre() {
       <SocialProof />
 
       {/* Our Story */}
-      <section className="section-padding bg-background">
-        <div className="container-section">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Quem Somos
-              </h2>
-              <div className="space-y-4 text-muted-foreground">
-                <p>
-                  A Interellos nasceu da uniao de experiencia academica e pratica corporativa, 
-                  com o proposito de democratizar o acesso a conhecimento de gestao de alta qualidade.
-                </p>
-                <p>
-                  Ao longo de duas decadas, formamos mais de 15.000 profissionais e 
-                  atuamos em centenas de projetos de consultoria para empresas de todos os portes.
-                </p>
-                <p>
-                  Nossa metodologia e fundamentada na aplicacao pratica: todo conteudo 
-                  e desenvolvido para gerar resultados imediatos no dia a dia do empreendedor e gestor.
-                </p>
+      <section className="section-padding bg-gradient-to-b from-background via-secondary/30 to-background relative overflow-hidden">
+        {/* Decorative blurred orbs */}
+        <div className="pointer-events-none absolute -top-24 -left-24 w-96 h-96 rounded-full bg-primary/20 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-[hsl(var(--brand-purple))]/20 blur-3xl" />
+
+        <div className="container-section relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+            {/* Quem Somos card */}
+            <div className="relative rounded-2xl p-[1px] bg-gradient-to-br from-primary/40 via-[hsl(var(--brand-purple))]/40 to-transparent shadow-[0_10px_40px_-12px_hsl(var(--brand-purple)/0.35)]">
+              <div className="rounded-2xl bg-card/95 backdrop-blur-sm p-8 md:p-10 h-full">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-5">
+                  <Sparkles className="h-3.5 w-3.5" />
+                  Nossa História
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  <span className="text-gradient-brand">Quem Somos</span>
+                </h2>
+                <div className="space-y-5 text-foreground/85 leading-relaxed text-[15px] md:text-base">
+                  <p className="relative pl-5 border-l-2 border-primary/40">
+                    A <strong className="text-foreground">Interellos</strong> nasceu da união de experiência acadêmica e prática corporativa, com o propósito de democratizar o acesso a conhecimento de gestão de alta qualidade.
+                  </p>
+                  <p>
+                    Ao longo de três décadas, formamos mais de <strong className="text-foreground">15.000 profissionais</strong> e atuamos em centenas de projetos de consultoria para empresas de todos os portes.
+                  </p>
+                  <p>
+                    Nossa metodologia é fundamentada na <strong className="text-foreground">aplicação prática</strong>: todo conteúdo é desenvolvido para gerar resultados imediatos no dia a dia do empreendedor e do gestor.
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="bg-secondary rounded-xl p-8">
-              <h3 className="text-xl font-semibold text-foreground mb-4">Nossa Missao</h3>
-              <p className="text-muted-foreground mb-6">
-                Desenvolver empreendedores e empresas por meio de conhecimento aplicado, 
-                contribuindo para o crescimento sustentavel dos negocios brasileiros.
-              </p>
-              <h3 className="text-xl font-semibold text-foreground mb-4">Nossa Visao</h3>
-              <p className="text-muted-foreground">
-                Ser referencia nacional em educacao executiva e consultoria para PMEs, 
-                reconhecidos pela qualidade e impacto real nos resultados de nossos clientes.
-              </p>
+
+            {/* Missão & Visão */}
+            <div className="grid grid-rows-2 gap-6">
+              <div className="group relative rounded-2xl p-[1px] bg-gradient-to-br from-primary/50 to-[hsl(var(--brand-purple))]/30 shadow-[0_10px_30px_-12px_hsl(var(--primary)/0.4)] transition-transform hover:-translate-y-1">
+                <div className="rounded-2xl bg-card p-7 md:p-8 h-full">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-[hsl(var(--brand-purple))] flex items-center justify-center shadow-[0_0_18px_hsl(var(--brand-purple)/0.5)]">
+                      <Compass className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gradient-brand mb-2">Nossa Missão</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Desenvolver empreendedores e empresas por meio de conhecimento aplicado, contribuindo para o crescimento sustentável dos negócios brasileiros.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="group relative rounded-2xl p-[1px] bg-gradient-to-br from-[hsl(var(--brand-purple))]/50 to-primary/30 shadow-[0_10px_30px_-12px_hsl(var(--brand-purple)/0.4)] transition-transform hover:-translate-y-1">
+                <div className="rounded-2xl bg-card p-7 md:p-8 h-full">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[hsl(var(--brand-purple))] to-primary flex items-center justify-center shadow-[0_0_18px_hsl(var(--brand-purple)/0.5)]">
+                      <Eye className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gradient-brand mb-2">Nossa Visão</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Ser referência nacional em educação executiva e consultoria para PMEs, reconhecidos pela qualidade e impacto real nos resultados de nossos clientes.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
