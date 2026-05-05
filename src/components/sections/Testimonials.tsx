@@ -57,10 +57,8 @@ export function Testimonials({
 }: TestimonialsProps) {
   return (
     <section className="section-padding bg-gradient-to-b from-background via-secondary/30 to-background relative overflow-hidden">
-      {/* Decorative blurred orbs */}
-      <div className="pointer-events-none absolute -top-24 -left-24 w-96 h-96 rounded-full bg-primary/15 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-[hsl(var(--brand-purple))]/20 blur-3xl" />
-
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-brand-purple/40 to-transparent" />
       <div className="container-section relative">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-5">
@@ -91,24 +89,24 @@ export function Testimonials({
           {testimonials.map((t, index) => (
             <motion.div
               key={index}
-              className="group relative rounded-2xl p-[1px] bg-gradient-to-br from-primary/40 via-[hsl(var(--brand-purple))]/40 to-transparent shadow-[0_10px_40px_-12px_hsl(var(--brand-purple)/0.35)] transition-all duration-300 hover:shadow-[0_20px_50px_-12px_hsl(var(--brand-purple)/0.5)]"
+              className="group relative rounded-lg p-[1px] bg-gradient-to-br from-primary/40 via-brand-purple/35 to-border shadow-[0_10px_40px_-12px_hsl(var(--brand-purple)/0.35)] transition-all duration-300 hover:shadow-[0_20px_50px_-12px_hsl(var(--brand-purple)/0.5)]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
               whileHover={{ y: -5 }}
             >
-              <div className="rounded-2xl bg-card/95 backdrop-blur-sm p-6 h-full flex flex-col relative overflow-hidden">
-                {/* Decorative quote */}
+              <div className="rounded-lg bg-card/95 backdrop-blur-sm p-6 h-full flex flex-col relative overflow-hidden">
+                <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
                 <Quote className="absolute -top-2 -right-2 h-24 w-24 text-primary/5 rotate-12" />
 
                 <div className="relative flex items-center gap-2 mb-4">
-                  <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-[hsl(var(--brand-purple))] flex items-center justify-center shadow-[0_0_15px_hsl(var(--brand-purple)/0.4)]">
-                    <Quote className="h-4 w-4 text-white" />
+                    <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-brand-purple flex items-center justify-center shadow-[0_0_15px_hsl(var(--brand-purple)/0.4)]">
+                    <Quote className="h-4 w-4 text-primary-foreground" />
                   </div>
                   <div className="flex items-center gap-0.5">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400" />
+                      <Star key={i} className="h-3.5 w-3.5 fill-cta text-cta" />
                     ))}
                   </div>
                 </div>
@@ -119,7 +117,7 @@ export function Testimonials({
 
                 <div className="relative flex items-center justify-between pt-4 border-t border-border/60">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-[hsl(var(--brand-purple))]/20 flex items-center justify-center text-primary font-bold text-sm border border-primary/20">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-brand-purple/20 flex items-center justify-center text-primary font-bold text-sm border border-primary/20">
                       {t.image}
                     </div>
                     <div>
