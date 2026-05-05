@@ -25,7 +25,10 @@ export default {
           glow: "hsl(var(--primary-glow))",
         },
         brand: {
+          blue: "hsl(var(--brand-blue-solid))",
+          "blue-metallic": "hsl(var(--primary))",
           purple: "hsl(var(--brand-purple))",
+          "purple-solid": "hsl(var(--brand-purple-solid))",
           "purple-glow": "hsl(var(--brand-purple-glow))",
         },
         secondary: {

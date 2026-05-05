@@ -101,7 +101,7 @@ export default function Consultoria() {
               Linhas de Atuacao
             </h2>
             <p className="text-lg text-muted-foreground">
-              Especialidades desenvolvidas ao longo de 20+ anos de experiencia
+              Especialidades desenvolvidas ao longo de 30+ anos de experiencia
             </p>
           </div>
 
@@ -172,7 +172,7 @@ export default function Consultoria() {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Experiencia comprovada</h4>
-                    <p className="text-sm text-primary-foreground/80">20+ anos e 500+ projetos realizados</p>
+                    <p className="text-sm text-primary-foreground/80">30+ anos e 90+ empresas atendidas</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">

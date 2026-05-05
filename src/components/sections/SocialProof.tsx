@@ -15,7 +15,7 @@ const stats = [
   },
   {
     icon: Building2,
-    value: '500+',
+    value: '90+',
     label: 'Empresas atendidas',
     description: 'De pequeno a grande porte',
   },
