@@ -58,13 +58,13 @@ export default function Index() {
             
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: '200ms' }}>
               <Link to="/cursos">
-                <Button size="lg" className="bg-cta hover:bg-cta-hover text-cta-foreground w-full sm:w-auto text-lg px-8 py-6 shadow-[0_0_20px_rgba(59,130,246,0.4),0_0_40px_rgba(59,130,246,0.2)] hover:shadow-[0_0_25px_rgba(59,130,246,0.5),0_0_50px_rgba(59,130,246,0.3)] transition-shadow">
+                <Button size="lg" className="w-full sm:w-auto text-lg px-8 py-6 text-white border-0 bg-[linear-gradient(135deg,hsl(215_78%_48%)_0%,hsl(255_60%_52%)_50%,hsl(275_60%_55%)_100%)] hover:brightness-110 shadow-[0_0_22px_hsl(275_70%_55%/0.5),0_0_44px_hsl(220_75%_45%/0.25)] hover:shadow-[0_0_30px_hsl(275_70%_60%/0.65),0_0_60px_hsl(220_75%_50%/0.35)] transition-all">
                   Ver Cursos
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link to="/contato">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white w-full sm:w-auto text-lg px-8 py-6 shadow-[0_0_20px_rgba(34,197,94,0.4),0_0_40px_rgba(34,197,94,0.2)] hover:shadow-[0_0_25px_rgba(34,197,94,0.5),0_0_50px_rgba(34,197,94,0.3)] transition-shadow">
+                <Button size="lg" className="w-full sm:w-auto text-lg px-8 py-6 text-white border-0 bg-[linear-gradient(135deg,hsl(215_78%_48%)_0%,hsl(255_60%_52%)_50%,hsl(275_60%_55%)_100%)] hover:brightness-110 shadow-[0_0_22px_hsl(275_70%_55%/0.5),0_0_44px_hsl(220_75%_45%/0.25)] hover:shadow-[0_0_30px_hsl(275_70%_60%/0.65),0_0_60px_hsl(220_75%_50%/0.35)] transition-all">
                   Fale Agora Conosco
                 </Button>
               </Link>
