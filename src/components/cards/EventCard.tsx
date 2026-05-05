@@ -15,7 +15,7 @@ export function EventCard({ event }: EventCardProps) {
         <ModalityBadge modality={event.modality} showLocation={event.modality === 'presencial'} />
       </div>
 
-      <h3 className="text-lg font-semibold text-foreground mb-2 line-clamp-2">
+      <h3 className="text-lg font-bold text-gradient-brand mb-2 line-clamp-2">
         {event.title}
       </h3>
 
