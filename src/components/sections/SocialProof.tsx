@@ -3,7 +3,7 @@ import { Award, Users, Building2, GraduationCap } from 'lucide-react';
 const stats = [
   {
     icon: Award,
-    value: '20+',
+    value: '30+',
     label: 'Anos de experiencia',
     description: 'Academica e corporativa',
   },
@@ -29,16 +29,17 @@ const stats = [
 
 export function SocialProof() {
   return (
-    <section className="bg-secondary py-12 md:py-16">
+    <section className="bg-secondary py-12 md:py-16 relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       <div className="container-section">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="text-center animate-fade-in"
+              className="rounded-lg border border-border/70 bg-card/70 p-5 text-center shadow-card animate-fade-in backdrop-blur-sm"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="inline-flex items-center justify-center p-3 rounded-xl bg-primary/10 mb-4">
+              <div className="inline-flex items-center justify-center p-3 rounded-lg bg-primary/10 mb-4">
                 <stat.icon className="h-6 w-6 text-primary" />
               </div>
               <div className="text-3xl md:text-4xl font-bold text-primary mb-1">

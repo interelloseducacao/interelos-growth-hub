@@ -3,6 +3,7 @@ import { Layout } from '@/components/layout/Layout';
 import { ModalityBadge } from '@/components/ui/ModalityBadge';
 import { TypeBadge } from '@/components/ui/TypeBadge';
 import { CourseCard } from '@/components/cards/CourseCard';
+import { Testimonials } from '@/components/sections/Testimonials';
 import { Button } from '@/components/ui/button';
 import { courses } from '@/data/mockData';
 import {
@@ -291,6 +292,12 @@ export default function CursoDetalhe() {
           )}
         </div>
       </section>
+
+      <Testimonials
+        badge="Alunos que aplicaram"
+        title="Resultados depois do aprendizado"
+        subtitle="Histórias reais de alunos que transformaram preço, margem e segurança comercial após aplicar a metodologia"
+      />
     </Layout>
   );
 }

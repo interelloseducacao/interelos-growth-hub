@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { SocialProof } from '@/components/sections/SocialProof';
 import { Testimonials } from '@/components/sections/Testimonials';
+import { InstitutionalCards } from '@/components/sections/InstitutionalCards';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import { CourseCard } from '@/components/cards/CourseCard';
 import { EventCard } from '@/components/cards/EventCard';
@@ -21,9 +22,7 @@ import {
   MapPin,
   CheckCircle,
   MessageCircle,
-  Clock,
-  Quote,
-  Star
+  Clock
 } from 'lucide-react';
 
 export default function Index() {
@@ -93,6 +92,8 @@ export default function Index() {
       {/* Social Proof */}
       <SocialProof />
 
+      <InstitutionalCards variant="educacao" />
+
       {/* Sobre - Mini Institucional */}
       <section className="section-padding bg-secondary/30">
         <div className="container-section">
@@ -149,13 +150,14 @@ export default function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0 }}
             >
-              <Link to="/cursos" className="card-base p-8 text-center group block h-full">
+              <Link to="/cursos" className="rounded-lg border border-border bg-card p-8 text-center group block h-full shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover relative overflow-hidden">
+                <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
                 <motion.div 
-                  className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-blue-100 mb-6 transition-all duration-300 group-hover:bg-blue-200 group-hover:shadow-lg group-hover:shadow-blue-200/50"
+                  className="inline-flex items-center justify-center w-16 h-16 rounded-lg bg-gradient-to-br from-primary/15 to-brand-purple/15 border border-primary/15 mb-6 transition-all duration-300 group-hover:border-primary/35"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <GraduationCap className="h-8 w-8 text-blue-600" />
+                  <GraduationCap className="h-8 w-8 text-primary" />
                 </motion.div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">
                   Cursos e Treinamentos
@@ -175,13 +177,14 @@ export default function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <Link to="/mentorias" className="card-base p-8 text-center group block h-full">
+              <Link to="/mentorias" className="rounded-lg border border-border bg-card p-8 text-center group block h-full shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover relative overflow-hidden">
+                <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
                 <motion.div 
-                  className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-indigo-100 mb-6 transition-all duration-300 group-hover:bg-indigo-200 group-hover:shadow-lg group-hover:shadow-indigo-200/50"
+                  className="inline-flex items-center justify-center w-16 h-16 rounded-lg bg-gradient-to-br from-primary/15 to-brand-purple/15 border border-primary/15 mb-6 transition-all duration-300 group-hover:border-primary/35"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <Users className="h-8 w-8 text-indigo-600" />
+                  <Users className="h-8 w-8 text-primary" />
                 </motion.div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">
                   Mentorias
@@ -201,13 +204,14 @@ export default function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Link to="/consultoria" className="card-base p-8 text-center group block h-full">
+              <Link to="/consultoria" className="rounded-lg border border-border bg-card p-8 text-center group block h-full shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover relative overflow-hidden">
+                <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
                 <motion.div 
-                  className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-sky-100 mb-6 transition-all duration-300 group-hover:bg-sky-200 group-hover:shadow-lg group-hover:shadow-sky-200/50"
+                  className="inline-flex items-center justify-center w-16 h-16 rounded-lg bg-gradient-to-br from-primary/15 to-brand-purple/15 border border-primary/15 mb-6 transition-all duration-300 group-hover:border-primary/35"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <Briefcase className="h-8 w-8 text-sky-600" />
+                  <Briefcase className="h-8 w-8 text-primary" />
                 </motion.div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">
                   Consultorias
@@ -307,42 +311,38 @@ export default function Index() {
               {
                 icon: Briefcase,
                 title: "Gestão Empresarial",
-                description: "Estruturação de processos, planejamento estratégico e governança corporativa para empresas de todos os portes.",
-                color: "blue"
+                description: "Estruturação de processos, planejamento estratégico e governança corporativa para empresas de todos os portes."
               },
               {
                 icon: Users,
                 title: "Desenvolvimento de Líderes",
-                description: "Formação de gestores e equipes de alta performance com metodologias práticas e foco em resultados.",
-                color: "indigo"
+                description: "Formação de gestores e equipes de alta performance com metodologias práticas e foco em resultados."
               },
               {
                 icon: GraduationCap,
                 title: "Vivência Acadêmica",
-                description: "Professores com experiência em grandes instituições, trazendo rigor metodológico e conhecimento atualizado.",
-                color: "sky"
+                description: "Professores com experiência em grandes instituições, trazendo rigor metodológico e conhecimento atualizado."
               },
               {
                 icon: Clock,
                 title: "Atuação Corporativa",
-                description: "Consultoria em empresas de pequeno a grande porte, com resultados comprovados em diversos setores.",
-                color: "emerald"
+                description: "Consultoria em empresas de pequeno a grande porte, com resultados comprovados em diversos setores."
               }
             ].map((item, index) => (
               <motion.div
                 key={index}
-                className="bg-card rounded-xl p-6 border border-border hover:shadow-lg transition-shadow"
+                className="bg-card rounded-lg p-6 border border-border shadow-card hover:shadow-card-hover transition-all hover:-translate-y-1"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <motion.div 
-                  className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-${item.color}-100 mb-4`}
+                  className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br from-primary/15 to-brand-purple/15 border border-primary/15 mb-4"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <item.icon className={`h-6 w-6 text-${item.color}-600`} />
+                  <item.icon className="h-6 w-6 text-primary" />
                 </motion.div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground">{item.description}</p>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Layout } from '@/components/layout/Layout';
 import { EventCard } from '@/components/cards/EventCard';
+import { InstitutionalCards } from '@/components/sections/InstitutionalCards';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { events } from '@/data/mockData';
@@ -42,6 +43,8 @@ export default function Eventos() {
           </div>
         </div>
       </section>
+
+      <InstitutionalCards variant="eventos" />
 
       {/* Events List */}
       <section className="section-padding bg-background">

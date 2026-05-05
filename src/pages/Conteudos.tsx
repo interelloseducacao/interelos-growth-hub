@@ -1,5 +1,6 @@
 import { Layout } from '@/components/layout/Layout';
 import { ArticleCard } from '@/components/cards/ArticleCard';
+import { InstitutionalCards } from '@/components/sections/InstitutionalCards';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { articles } from '@/data/mockData';
@@ -39,6 +40,8 @@ export default function Conteudos() {
           </div>
         </div>
       </section>
+
+      <InstitutionalCards variant="conteudos" />
 
       {/* Featured Articles */}
       <section className="py-12 bg-secondary">

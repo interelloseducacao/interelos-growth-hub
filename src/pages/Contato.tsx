@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Layout } from '@/components/layout/Layout';
+import { InstitutionalCards } from '@/components/sections/InstitutionalCards';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -57,6 +58,8 @@ export default function Contato() {
           </div>
         </div>
       </section>
+
+      <InstitutionalCards variant="contato" />
 
       {/* Contact Content */}
       <section className="section-padding bg-background">

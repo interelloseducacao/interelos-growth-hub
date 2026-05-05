@@ -9,9 +9,10 @@ interface ArticleCardProps {
 
 export function ArticleCard({ article }: ArticleCardProps) {
   return (
-    <div className="card-base flex flex-col h-full p-6">
-      <div className="mb-3">
-        <span className="px-2.5 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">
+    <div className="group rounded-lg border border-border bg-card flex flex-col h-full p-6 relative overflow-hidden shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+      <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
+      <div className="mb-3 pt-1">
+        <span className="px-2.5 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full border border-primary/15">
           {article.category}
         </span>
       </div>
