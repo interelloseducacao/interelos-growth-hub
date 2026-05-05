@@ -49,7 +49,7 @@ export default function Contato() {
         <div className="container-section">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
-              Contato
+              <span className="text-gradient-brand">Contato</span>
             </h1>
             <p className="text-lg text-primary-foreground/90">
               Fale com a Interellos. Estamos prontos para ajudar voce e sua empresa.

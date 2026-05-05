@@ -48,7 +48,7 @@ export default function Sobre() {
         <div className="container-section">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-              Sobre a Interellos
+              Sobre a <span className="text-gradient-brand">Interellos</span>
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/90">
               Ha mais de 30 anos desenvolvendo empreendedores e empresas com metodologias praticas e foco em resultados.

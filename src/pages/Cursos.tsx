@@ -60,7 +60,7 @@ export default function Cursos() {
         <div className="container-section">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
-              Cursos e Treinamentos
+              Cursos e <span className="text-gradient-brand">Treinamentos</span>
             </h1>
             <p className="text-lg text-primary-foreground/90">
               Formacoes completas para empreendedores e gestores que buscam 
