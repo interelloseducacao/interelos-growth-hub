@@ -10,8 +10,9 @@ interface EventCardProps {
 
 export function EventCard({ event }: EventCardProps) {
   return (
-    <div className="card-base flex flex-col h-full p-6">
-      <div className="flex flex-wrap gap-2 mb-4">
+    <div className="group rounded-lg border border-border bg-card flex flex-col h-full p-6 relative overflow-hidden shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+      <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
+      <div className="flex flex-wrap gap-2 mb-4 pt-1">
         <ModalityBadge modality={event.modality} showLocation={event.modality === 'presencial'} />
       </div>
 
