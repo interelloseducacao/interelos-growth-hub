@@ -131,29 +131,47 @@ export default function Sobre() {
       </section>
 
       {/* Values */}
-      <section className="section-padding bg-secondary">
-        <div className="container-section">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Nossos Valores
+      <section className="section-padding bg-gradient-to-b from-secondary/40 via-background to-secondary/40 relative overflow-hidden">
+        <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[hsl(var(--brand-purple))]/10 blur-3xl" />
+
+        <div className="container-section relative">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[hsl(var(--brand-purple))]/10 text-[hsl(var(--brand-purple))] text-xs font-semibold uppercase tracking-wider mb-4">
+              <Sparkles className="h-3.5 w-3.5" />
+              O que nos move
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-gradient-brand">Nossos Valores</span>
             </h2>
             <p className="text-lg text-muted-foreground">
-              Principios que guiam nossa atuacao
+              Princípios que guiam nossa atuação
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
-              <div key={index} className="bg-card rounded-xl p-6 border border-border">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 mb-4">
-                  <value.icon className="h-6 w-6 text-primary" />
+              <div
+                key={index}
+                className="group relative rounded-2xl p-[1px] bg-gradient-to-br from-primary/40 via-[hsl(var(--brand-purple))]/30 to-transparent shadow-[0_8px_30px_-12px_hsl(var(--brand-purple)/0.35)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_18px_40px_-12px_hsl(var(--brand-purple)/0.55)]"
+              >
+                <div className="rounded-2xl bg-card h-full p-6 flex flex-col">
+                  <div className="relative mb-5">
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary to-[hsl(var(--brand-purple))] blur-md opacity-50 group-hover:opacity-80 transition-opacity" />
+                    <div className="relative inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-[hsl(var(--brand-purple))] shadow-[0_0_20px_hsl(var(--brand-purple)/0.45)]">
+                      <value.icon className="h-7 w-7 text-white" />
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-bold text-gradient-brand mb-2">
+                    {value.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {value.description}
+                  </p>
+                  <div className="mt-4 pt-4 border-t border-border/60 flex items-center text-xs font-semibold text-muted-foreground/70">
+                    <span className="font-mono">0{index + 1}</span>
+                    <div className="ml-3 h-px flex-1 bg-gradient-to-r from-primary/40 to-transparent" />
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  {value.title}
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  {value.description}
-                </p>
               </div>
             ))}
           </div>
