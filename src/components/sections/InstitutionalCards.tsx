@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import type { ElementType } from 'react';
 import {
   BarChart3,
   BookOpenCheck,
@@ -109,8 +110,8 @@ const content = {
   title: string;
   subtitle: string;
   visualTitle: string;
-  visualSteps: React.ElementType[];
-  cards: { icon: React.ElementType; title: string; description: string; stat: string }[];
+  visualSteps: ElementType[];
+  cards: { icon: ElementType; title: string; description: string; stat: string }[];
 }>;
 
 interface InstitutionalCardsProps {
