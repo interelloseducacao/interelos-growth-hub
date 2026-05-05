@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Layout } from '@/components/layout/Layout';
 import { CourseCard } from '@/components/cards/CourseCard';
+import { InstitutionalCards } from '@/components/sections/InstitutionalCards';
+import { Testimonials } from '@/components/sections/Testimonials';
 import { Button } from '@/components/ui/button';
 import { courses } from '@/data/mockData';
 import { Link } from 'react-router-dom';
@@ -69,6 +71,8 @@ export default function Cursos() {
           </div>
         </div>
       </section>
+
+      <InstitutionalCards variant="educacao" />
 
       {/* Filters & Content */}
       <section className="section-padding bg-background">
@@ -238,6 +242,12 @@ export default function Cursos() {
           </div>
         </div>
       </section>
+
+      <Testimonials
+        badge="Alunos em evolução"
+        title="Resultados de quem colocou em prática"
+        subtitle="Depoimentos de alunos que aplicaram os aprendizados em precificação, margem e gestão do negócio"
+      />
     </Layout>
   );
 }
