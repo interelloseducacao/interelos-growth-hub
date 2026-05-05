@@ -311,42 +311,38 @@ export default function Index() {
               {
                 icon: Briefcase,
                 title: "Gestão Empresarial",
-                description: "Estruturação de processos, planejamento estratégico e governança corporativa para empresas de todos os portes.",
-                color: "blue"
+                description: "Estruturação de processos, planejamento estratégico e governança corporativa para empresas de todos os portes."
               },
               {
                 icon: Users,
                 title: "Desenvolvimento de Líderes",
-                description: "Formação de gestores e equipes de alta performance com metodologias práticas e foco em resultados.",
-                color: "indigo"
+                description: "Formação de gestores e equipes de alta performance com metodologias práticas e foco em resultados."
               },
               {
                 icon: GraduationCap,
                 title: "Vivência Acadêmica",
-                description: "Professores com experiência em grandes instituições, trazendo rigor metodológico e conhecimento atualizado.",
-                color: "sky"
+                description: "Professores com experiência em grandes instituições, trazendo rigor metodológico e conhecimento atualizado."
               },
               {
                 icon: Clock,
                 title: "Atuação Corporativa",
-                description: "Consultoria em empresas de pequeno a grande porte, com resultados comprovados em diversos setores.",
-                color: "emerald"
+                description: "Consultoria em empresas de pequeno a grande porte, com resultados comprovados em diversos setores."
               }
             ].map((item, index) => (
               <motion.div
                 key={index}
-                className="bg-card rounded-xl p-6 border border-border hover:shadow-lg transition-shadow"
+                className="bg-card rounded-lg p-6 border border-border shadow-card hover:shadow-card-hover transition-all hover:-translate-y-1"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <motion.div 
-                  className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-${item.color}-100 mb-4`}
+                  className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br from-primary/15 to-brand-purple/15 border border-primary/15 mb-4"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <item.icon className={`h-6 w-6 text-${item.color}-600`} />
+                  <item.icon className="h-6 w-6 text-primary" />
                 </motion.div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground">{item.description}</p>
