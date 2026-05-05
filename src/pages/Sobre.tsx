@@ -357,26 +357,87 @@ export default function Sobre() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-background">
-        <div className="container-section text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Pronto para comecar?
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Conheca nossos cursos ou fale com nossa equipe para uma solucao personalizada.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/cursos">
-              <Button size="lg" className="bg-cta hover:bg-cta-hover text-cta-foreground">
-                Conhecer Cursos
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            <Link to="/contato">
-              <Button size="lg" variant="outline">
-                Falar com a Interellos
-              </Button>
-            </Link>
+      <section className="section-padding bg-gradient-to-b from-background via-secondary/30 to-background relative overflow-hidden">
+        {/* Decorative blurred orbs */}
+        <div className="pointer-events-none absolute -top-32 -left-32 w-[28rem] h-[28rem] rounded-full bg-primary/15 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-32 -right-32 w-[28rem] h-[28rem] rounded-full bg-[hsl(var(--brand-purple))]/20 blur-3xl" />
+
+        <div className="container-section relative">
+          <div className="relative rounded-3xl p-[1px] bg-gradient-to-br from-primary/50 via-[hsl(var(--brand-purple))]/50 to-transparent shadow-[0_20px_60px_-15px_hsl(var(--brand-purple)/0.45)] max-w-5xl mx-auto">
+            <div className="rounded-3xl bg-card/95 backdrop-blur-sm p-10 md:p-16 relative overflow-hidden">
+              {/* Decorative floating icons */}
+              <div className="pointer-events-none absolute top-8 left-8 opacity-10">
+                <GraduationCap className="h-24 w-24 text-primary" />
+              </div>
+              <div className="pointer-events-none absolute bottom-8 right-8 opacity-10">
+                <Briefcase className="h-24 w-24 text-[hsl(var(--brand-purple))]" />
+              </div>
+              <div className="pointer-events-none absolute top-12 right-16 opacity-15">
+                <Sparkles className="h-10 w-10 text-[hsl(var(--brand-purple))]" />
+              </div>
+              <div className="pointer-events-none absolute bottom-16 left-20 opacity-15">
+                <Target className="h-12 w-12 text-primary" />
+              </div>
+
+              <div className="relative text-center max-w-2xl mx-auto">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-6">
+                  <Sparkles className="h-3.5 w-3.5" />
+                  Próximo passo
+                </div>
+
+                {/* Central icon cluster */}
+                <div className="flex items-center justify-center gap-3 mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-[hsl(var(--brand-purple))]/20 flex items-center justify-center backdrop-blur-sm border border-primary/20">
+                    <Lightbulb className="h-7 w-7 text-primary" />
+                  </div>
+                  <ArrowRight className="h-5 w-5 text-muted-foreground" />
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-[hsl(var(--brand-purple))] flex items-center justify-center shadow-[0_0_30px_hsl(var(--brand-purple)/0.5)]">
+                    <Award className="h-8 w-8 text-white" />
+                  </div>
+                  <ArrowRight className="h-5 w-5 text-muted-foreground" />
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[hsl(var(--brand-purple))]/20 to-primary/20 flex items-center justify-center backdrop-blur-sm border border-[hsl(var(--brand-purple))]/20">
+                    <Target className="h-7 w-7 text-[hsl(var(--brand-purple))]" />
+                  </div>
+                </div>
+
+                <h2 className="text-3xl md:text-5xl font-bold mb-5">
+                  Pronto para <span className="text-gradient-brand">começar</span>?
+                </h2>
+                <p className="text-lg text-muted-foreground mb-8">
+                  Conheça nossos cursos ou fale com nossa equipe para uma solução personalizada
+                  para o seu momento de negócio.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link to="/cursos">
+                    <Button size="lg" className="bg-cta hover:bg-cta-hover text-cta-foreground shadow-[0_0_25px_hsl(var(--cta)/0.5)] w-full sm:w-auto">
+                      Conhecer Cursos
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                  </Link>
+                  <Link to="/contato">
+                    <Button size="lg" variant="outline" className="w-full sm:w-auto border-primary/30 hover:bg-primary/5">
+                      Falar com a Interellos
+                    </Button>
+                  </Link>
+                </div>
+
+                {/* Trust signals */}
+                <div className="mt-10 pt-8 border-t border-border/50 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <Award className="h-4 w-4 text-primary" />
+                    <span>+30 anos de experiência</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Users className="h-4 w-4 text-primary" />
+                    <span>Mais de 5.000 alunos</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="h-4 w-4 text-primary" />
+                    <span>Metodologia aplicada</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
