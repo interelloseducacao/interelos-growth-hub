@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { SocialProof } from '@/components/sections/SocialProof';
 import { Testimonials } from '@/components/sections/Testimonials';
+import { InstitutionalCards } from '@/components/sections/InstitutionalCards';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import { CourseCard } from '@/components/cards/CourseCard';
 import { EventCard } from '@/components/cards/EventCard';
@@ -21,9 +22,7 @@ import {
   MapPin,
   CheckCircle,
   MessageCircle,
-  Clock,
-  Quote,
-  Star
+  Clock
 } from 'lucide-react';
 
 export default function Index() {
@@ -92,6 +91,8 @@ export default function Index() {
 
       {/* Social Proof */}
       <SocialProof />
+
+      <InstitutionalCards variant="educacao" />
 
       {/* Sobre - Mini Institucional */}
       <section className="section-padding bg-secondary/30">
