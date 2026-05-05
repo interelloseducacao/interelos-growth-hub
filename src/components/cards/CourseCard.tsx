@@ -13,14 +13,15 @@ export function CourseCard({ course }: CourseCardProps) {
   const isHighlight = course.highlight;
 
   return (
-    <div className={`card-base flex flex-col h-full p-6 relative ${isHighlight ? 'ring-2 ring-cta shadow-lg shadow-cta/20' : ''}`}>
+    <div className={`group rounded-lg border border-border bg-card flex flex-col h-full p-6 relative overflow-hidden shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover ${isHighlight ? 'ring-2 ring-cta shadow-[0_0_28px_hsl(var(--cta)/0.22)]' : ''}`}>
+      <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
       {isHighlight && (
         <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-cta text-cta-foreground text-xs font-bold rounded-full uppercase tracking-wide">
           Oferta Especial
         </div>
       )}
 
-      <div className="flex flex-wrap gap-2 mb-4">
+      <div className="flex flex-wrap gap-2 mb-4 pt-1">
         <ModalityBadge modality={course.modality} showLocation={course.modality === 'presencial'} />
         <TypeBadge type={course.type} />
       </div>
@@ -50,7 +51,7 @@ export function CourseCard({ course }: CourseCardProps) {
         {course.themes.slice(0, 3).map((theme) => (
           <span
             key={theme}
-            className="px-2 py-0.5 text-xs bg-secondary text-secondary-foreground rounded"
+            className="px-2 py-0.5 text-xs bg-secondary text-secondary-foreground rounded border border-border/70"
           >
             {theme}
           </span>
