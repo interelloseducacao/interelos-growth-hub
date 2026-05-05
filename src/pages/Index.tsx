@@ -41,7 +41,7 @@ export default function Index() {
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 animate-fade-in shadow-[0_0_20px_rgba(255,255,255,0.15),0_0_40px_rgba(100,150,255,0.1)]">
               <span className="w-2 h-2 rounded-full bg-cta animate-pulse shadow-[0_0_8px_rgba(var(--cta))]" />
-              <span className="text-sm font-medium text-white/90">20+ anos formando líderes de mercado</span>
+              <span className="text-sm font-medium text-white/90">30+ anos formando líderes de mercado</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6 animate-fade-in text-white">
@@ -73,7 +73,7 @@ export default function Index() {
             {/* Quick stats */}
             <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg animate-fade-in" style={{ animationDelay: '300ms' }}>
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-white">20+</div>
+                <div className="text-3xl md:text-4xl font-bold text-white">30+</div>
                 <div className="text-sm text-white/60">Anos de experiência</div>
               </div>
               <div>
@@ -81,7 +81,7 @@ export default function Index() {
                 <div className="text-sm text-white/60">Alunos treinados</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-white">500+</div>
+                <div className="text-3xl md:text-4xl font-bold text-white">90+</div>
                 <div className="text-sm text-white/60">Empresas atendidas</div>
               </div>
             </div>
@@ -297,7 +297,7 @@ export default function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              Há mais de 20 anos combinamos vivência acadêmica e corporativa para desenvolver soluções que impulsionam o crescimento sustentável de empresas em todo o Brasil.
+              Há mais de 30 anos combinamos vivência acadêmica e corporativa para desenvolver soluções que impulsionam o crescimento sustentável de empresas em todo o Brasil.
             </motion.p>
           </div>
 

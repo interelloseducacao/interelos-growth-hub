@@ -43,7 +43,7 @@ export function Footer() {
               Desenvolvimento e aperfeicoamento para empreendedores e empresas.
             </p>
             <p className="mt-4 text-sm font-medium text-primary-foreground/90">
-              20+ anos de experiencia | 15.000+ alunos treinados
+              30+ anos de experiencia | 15.000+ alunos treinados
             </p>
             <div className="mt-6 flex items-center gap-2 text-sm text-primary-foreground/80">
               <MapPin className="h-4 w-4 flex-shrink-0" />

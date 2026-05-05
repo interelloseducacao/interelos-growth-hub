@@ -51,7 +51,7 @@ export default function Sobre() {
               Sobre a Interellos
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/90">
-              Ha mais de 20 anos desenvolvendo empreendedores e empresas com metodologias praticas e foco em resultados.
+              Ha mais de 30 anos desenvolvendo empreendedores e empresas com metodologias praticas e foco em resultados.
             </p>
           </div>
         </div>
