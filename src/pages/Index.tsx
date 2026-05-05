@@ -46,7 +46,7 @@ export default function Index() {
             
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6 animate-fade-in text-white">
               Desenvolvimento e 
-              <span className="block bg-gradient-to-r from-[hsl(210_80%_65%)] via-[hsl(260_70%_65%)] to-[hsl(280_70%_70%)] bg-clip-text text-transparent drop-shadow-[0_2px_12px_hsl(275_70%_55%/0.45)]">aperfeiçoamento</span>
+              <span className="block text-gradient-brand">aperfeiçoamento</span>
               para empreendedores
             </h1>
             

@@ -224,6 +224,12 @@
     @apply bg-clip-text text-transparent;
     background: var(--gradient-cta);
   }
+
+  .text-gradient-brand {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(210 80% 65%) 0%, hsl(245 70% 65%) 45%, hsl(275 70% 65%) 75%, hsl(285 75% 72%) 100%);
+    filter: drop-shadow(0 2px 12px hsl(275 70% 55% / 0.45));
+  }
 }
 
 @layer utilities {

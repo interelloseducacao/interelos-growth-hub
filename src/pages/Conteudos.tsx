@@ -30,7 +30,7 @@ export default function Conteudos() {
         <div className="container-section">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
-              Conteudos e Conhecimento
+              Conteudos e <span className="text-gradient-brand">Conhecimento</span>
             </h1>
             <p className="text-lg text-primary-foreground/90">
               Artigos, insights e materiais praticos sobre gestao, estrategia 

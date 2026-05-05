@@ -33,7 +33,7 @@ export default function Eventos() {
         <div className="container-section">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
-              Eventos e Encontros
+              Eventos e <span className="text-gradient-brand">Encontros</span>
             </h1>
             <p className="text-lg text-primary-foreground/90">
               Workshops, encontros e oportunidades de networking para 

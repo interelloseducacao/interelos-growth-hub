@@ -75,7 +75,7 @@ export default function Mentorias() {
         <div className="container-section">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-              Mentorias
+              <span className="text-gradient-brand">Mentorias</span>
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/90 mb-8">
               Acompanhamento personalizado com especialistas experientes para 
