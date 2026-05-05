@@ -1,8 +1,9 @@
+import type { ElementType } from 'react';
 import { MessageSquare, FileText, Rocket, TrendingUp } from 'lucide-react';
 
 interface Step {
   number: string;
-  icon: React.ElementType;
+  icon: ElementType;
   title: string;
   description: string;
 }
