@@ -202,7 +202,7 @@ export const courses: Course[] = [
       { title: 'Construcao do Plano', topics: ['Metas', 'Iniciativas', 'Cronograma'] }
     ],
     instructors: [{ name: 'Prof. Carlos Silva', role: 'Diretor Academico', bio: 'Especialista em estrategia com 20+ anos de experiencia.' }],
-    dates: '15 e 16 de Fevereiro de 2025',
+    dates: '12 e 13 de Julho de 2026',
     location: 'Lapa - Sao Paulo',
     featured: true
   },
@@ -229,7 +229,7 @@ export const courses: Course[] = [
       { title: 'Estrategias de Crescimento', topics: ['Growth hacking', 'Vendas B2B', 'Parcerias'] }
     ],
     instructors: [{ name: 'Prof. Roberto Mendes', role: 'Mentor de Startups', bio: 'Investidor-anjo e mentor de mais de 100 startups.' }],
-    dates: '22 a 24 de Marco de 2025',
+    dates: '23 a 25 de Julho de 2026',
     location: 'Lapa - Sao Paulo',
     featured: true
   },
