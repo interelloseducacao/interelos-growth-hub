@@ -9,9 +9,10 @@ interface CaseCardProps {
 
 export function CaseCard({ caseItem }: CaseCardProps) {
   return (
-    <div className="card-base flex flex-col h-full p-6">
+    <div className="group rounded-lg border border-border bg-card flex flex-col h-full p-6 relative overflow-hidden shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+      <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
       <div className="flex items-center gap-2 mb-4">
-        <div className="p-2 rounded-lg bg-primary/10">
+        <div className="p-2 rounded-lg bg-gradient-to-br from-primary/15 to-brand-purple/15 border border-primary/15">
           <Building2 className="h-5 w-5 text-primary" />
         </div>
         <div>
@@ -46,7 +47,7 @@ export function CaseCard({ caseItem }: CaseCardProps) {
           {caseItem.metrics.map((metric, index) => (
             <span
               key={index}
-              className="inline-flex items-center gap-1 px-2 py-1 text-xs font-medium bg-success/10 text-success rounded"
+              className="inline-flex items-center gap-1 px-2 py-1 text-xs font-medium bg-success/10 text-success rounded border border-success/20"
             >
               <TrendingUp className="h-3 w-3" />
               {metric}
