@@ -1,5 +1,7 @@
 import { Layout } from '@/components/layout/Layout';
 import { HowItWorks } from '@/components/sections/HowItWorks';
+import { InstitutionalCards } from '@/components/sections/InstitutionalCards';
+import { Testimonials } from '@/components/sections/Testimonials';
 import { LeadForm } from '@/components/forms/LeadForm';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -89,6 +91,8 @@ export default function Mentorias() {
           </div>
         </div>
       </section>
+
+      <InstitutionalCards variant="mentoria" />
 
       {/* Mentoring Types */}
       <section className="section-padding bg-background">
@@ -193,6 +197,12 @@ export default function Mentorias() {
           </div>
         </div>
       </section>
+
+      <Testimonials
+        badge="Evolução na prática"
+        title="Decisões melhores, negócios mais fortes"
+        subtitle="Depoimentos de empreendedores que ganharam clareza para cobrar melhor, ajustar ofertas e crescer com mais segurança"
+      />
 
       {/* CTA with Form */}
       <section className="section-padding bg-primary">
