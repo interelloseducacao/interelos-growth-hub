@@ -212,7 +212,7 @@ export default function CursoDetalhe() {
                     <div className="text-center mb-6">
                       <p className="text-sm text-muted-foreground mb-1">Investimento</p>
                       <p className="text-3xl font-bold text-primary">{course.price}</p>
-                      <p className="text-sm text-muted-foreground">ou em ate 12x</p>
+                      <p className="text-sm text-muted-foreground">{course.installments ? `ou ${course.installments}` : 'ou em ate 12x'}</p>
                     </div>
                   )}
 
