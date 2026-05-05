@@ -2,7 +2,9 @@ import { Layout } from '@/components/layout/Layout';
 import { SocialProof } from '@/components/sections/SocialProof';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Target, Lightbulb, Users, Award, Sparkles, Quote, Compass, Eye } from 'lucide-react';
+import { ArrowRight, Target, Lightbulb, Users, Award, Sparkles, Quote, Compass, Eye, Linkedin, GraduationCap, Briefcase } from 'lucide-react';
+import andersonPhoto from '@/assets/anderson-claudino.png';
+import luilsonPhoto from '@/assets/luilson-gomes.jpg';
 
 const values = [
   {
@@ -32,11 +34,17 @@ const team = [
     name: 'Prof. Anderson Claudino',
     role: 'Especialista em Gestão Estratégica',
     bio: 'Especialista em Gestão Estratégica de Negócios e Valuation. Consultor Empresarial e empreendedor em diversas empresas.',
+    photo: andersonPhoto,
+    icon: GraduationCap,
+    tags: ['Gestão Estratégica', 'Valuation', 'M&A'],
   },
   {
     name: 'Luilson Gomes',
     role: 'Especialista em Negócios Digitais',
     bio: 'Empreendedor com MBA pela FGV em Negócios Digitais. Ampla experiência em M&A, Investidor em Startups e Captação de Recursos.',
+    photo: luilsonPhoto,
+    icon: Briefcase,
+    tags: ['Negócios Digitais', 'Startups', 'Captação'],
   },
 ];
 
@@ -179,36 +187,73 @@ export default function Sobre() {
       </section>
 
       {/* Team */}
-      <section className="section-padding bg-background">
-        <div className="container-section">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Nossa Equipe
+      <section className="section-padding bg-gradient-to-b from-background via-secondary/30 to-background relative overflow-hidden">
+        {/* Decorative blurred orbs */}
+        <div className="pointer-events-none absolute top-1/3 -left-24 w-96 h-96 rounded-full bg-primary/15 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-[hsl(var(--brand-purple))]/20 blur-3xl" />
+
+        <div className="container-section relative">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-5">
+              <Users className="h-3.5 w-3.5" />
+              Quem Lidera
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-gradient-brand">Nossa Equipe</span>
             </h2>
             <p className="text-lg text-muted-foreground">
-              Especialistas com experiencia academica e de mercado
+              Especialistas com experiência acadêmica e de mercado
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            {team.map((member, index) => (
-              <div key={index} className="card-base p-6 text-center">
-                <div className="w-24 h-24 rounded-full bg-primary/10 mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-primary">
-                    {member.name.split(' ').map(n => n[0]).join('')}
-                  </span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {team.map((member, index) => {
+              const Icon = member.icon;
+              return (
+                <div
+                  key={index}
+                  className="group relative rounded-2xl p-[1px] bg-gradient-to-br from-primary/40 via-[hsl(var(--brand-purple))]/40 to-transparent shadow-[0_10px_40px_-12px_hsl(var(--brand-purple)/0.35)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-12px_hsl(var(--brand-purple)/0.5)]"
+                >
+                  <div className="rounded-2xl bg-card/95 backdrop-blur-sm overflow-hidden h-full flex flex-col">
+                    {/* Photo header */}
+                    <div className="relative h-72 overflow-hidden bg-gradient-to-br from-primary/10 to-[hsl(var(--brand-purple))]/10">
+                      <img
+                        src={member.photo}
+                        alt={member.name}
+                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
+                      <div className="absolute top-4 right-4 w-11 h-11 rounded-xl bg-gradient-to-br from-primary to-[hsl(var(--brand-purple))] flex items-center justify-center shadow-[0_0_20px_hsl(var(--brand-purple)/0.5)]">
+                        <Icon className="h-5 w-5 text-white" />
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-6 md:p-7 flex-1 flex flex-col">
+                      <h3 className="text-xl font-bold text-foreground mb-1">
+                        {member.name}
+                      </h3>
+                      <p className="text-sm font-semibold mb-4">
+                        <span className="text-gradient-brand">{member.role}</span>
+                      </p>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-5 flex-1">
+                        {member.bio}
+                      </p>
+                      <div className="flex flex-wrap gap-2 pt-4 border-t border-border/50">
+                        {member.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="text-xs px-2.5 py-1 rounded-full bg-primary/10 text-primary font-medium"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-1">
-                  {member.name}
-                </h3>
-                <p className="text-sm text-primary font-medium mb-3">
-                  {member.role}
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  {member.bio}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
