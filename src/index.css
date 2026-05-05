@@ -6,66 +6,74 @@
 
 @layer base {
   :root {
-    /* Core brand colors - Professional blue palette */
+    /* Core brand colors - Interellos blue → purple identity */
     --background: 0 0% 100%;
-    --foreground: 220 20% 15%;
+    --foreground: 230 25% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 15%;
+    --card-foreground: 230 25% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 15%;
+    --popover-foreground: 230 25% 12%;
 
-    /* Primary - Deep professional blue */
-    --primary: 215 80% 25%;
+    /* Primary - Interellos brand blue */
+    --primary: 220 75% 42%;
     --primary-foreground: 0 0% 100%;
+    --primary-glow: 225 85% 60%;
 
-    /* Secondary - Light blue-gray */
-    --secondary: 210 25% 96%;
-    --secondary-foreground: 220 20% 15%;
+    /* Brand purple/violet from logo */
+    --brand-purple: 270 55% 50%;
+    --brand-purple-glow: 275 70% 65%;
 
-    /* Muted - Soft grays */
-    --muted: 210 20% 96%;
-    --muted-foreground: 220 10% 45%;
+    /* Secondary - Light blue-violet tint */
+    --secondary: 230 35% 96%;
+    --secondary-foreground: 230 25% 12%;
 
-    /* Accent - Vibrant blue for CTAs */
-    --accent: 210 100% 50%;
+    /* Muted */
+    --muted: 230 25% 96%;
+    --muted-foreground: 230 12% 45%;
+
+    /* Accent - Brand purple for accents */
+    --accent: 270 55% 50%;
     --accent-foreground: 0 0% 100%;
 
-    /* CTA - Strong action color */
-    --cta: 210 100% 45%;
+    /* CTA - Vibrant green for high contrast (per brand) */
+    --cta: 145 70% 42%;
     --cta-foreground: 0 0% 100%;
-    --cta-hover: 210 100% 40%;
+    --cta-hover: 145 70% 36%;
 
-    /* Success green for badges */
+    /* Success */
     --success: 160 70% 40%;
     --success-foreground: 0 0% 100%;
 
-    /* Warning/highlight */
-    --highlight: 45 100% 50%;
-    --highlight-foreground: 220 20% 15%;
+    /* Highlight */
+    --highlight: 275 80% 60%;
+    --highlight-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 90%;
-    --input: 220 15% 90%;
-    --ring: 210 100% 50%;
+    --border: 230 20% 90%;
+    --input: 230 20% 90%;
+    --ring: 270 55% 50%;
 
     --radius: 0.5rem;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(215 80% 25%) 0%, hsl(210 70% 35%) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(210 100% 45%) 0%, hsl(210 100% 55%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 25% 98%) 100%);
+    /* Gradients - blue → purple brand identity */
+    --gradient-hero: linear-gradient(135deg, hsl(220 75% 22%) 0%, hsl(250 60% 30%) 50%, hsl(275 60% 35%) 100%);
+    --gradient-brand: linear-gradient(135deg, hsl(220 75% 45%) 0%, hsl(270 60% 55%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(145 70% 42%) 0%, hsl(160 70% 45%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(230 35% 98%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(220 75% 42%) 0%, hsl(270 55% 50%) 100%);
 
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(220 20% 15% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(220 20% 15% / 0.1), 0 2px 4px -2px hsl(220 20% 15% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(220 20% 15% / 0.1), 0 4px 6px -4px hsl(220 20% 15% / 0.1);
-    --shadow-xl: 0 20px 25px -5px hsl(220 20% 15% / 0.1), 0 8px 10px -6px hsl(220 20% 15% / 0.1);
-    --shadow-card: 0 4px 20px -2px hsl(220 20% 15% / 0.08);
-    --shadow-card-hover: 0 12px 30px -4px hsl(220 20% 15% / 0.15);
+    /* Shadows with brand tint */
+    --shadow-sm: 0 1px 2px 0 hsl(230 25% 12% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(230 25% 12% / 0.1), 0 2px 4px -2px hsl(230 25% 12% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(230 25% 12% / 0.1), 0 4px 6px -4px hsl(230 25% 12% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(230 25% 12% / 0.1), 0 8px 10px -6px hsl(230 25% 12% / 0.1);
+    --shadow-card: 0 4px 20px -2px hsl(230 25% 12% / 0.08);
+    --shadow-card-hover: 0 12px 30px -4px hsl(270 55% 50% / 0.18);
+    --shadow-glow: 0 0 40px -8px hsl(270 60% 55% / 0.45);
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
@@ -79,49 +87,56 @@
   }
 
   .dark {
-    --background: 220 20% 10%;
-    --foreground: 210 40% 98%;
+    --background: 235 30% 8%;
+    --foreground: 230 30% 96%;
 
-    --card: 220 20% 12%;
-    --card-foreground: 210 40% 98%;
+    --card: 235 30% 11%;
+    --card-foreground: 230 30% 96%;
 
-    --popover: 220 20% 12%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 235 30% 11%;
+    --popover-foreground: 230 30% 96%;
 
-    --primary: 210 80% 60%;
-    --primary-foreground: 220 20% 10%;
+    --primary: 225 85% 65%;
+    --primary-foreground: 235 30% 8%;
+    --primary-glow: 230 90% 72%;
 
-    --secondary: 220 20% 18%;
-    --secondary-foreground: 210 40% 98%;
+    --brand-purple: 275 70% 65%;
+    --brand-purple-glow: 280 80% 75%;
 
-    --muted: 220 20% 18%;
-    --muted-foreground: 215 20% 65%;
+    --secondary: 235 25% 18%;
+    --secondary-foreground: 230 30% 96%;
 
-    --accent: 210 100% 60%;
-    --accent-foreground: 220 20% 10%;
+    --muted: 235 25% 18%;
+    --muted-foreground: 230 15% 70%;
 
-    --cta: 210 100% 55%;
-    --cta-foreground: 220 20% 10%;
-    --cta-hover: 210 100% 60%;
+    --accent: 275 70% 65%;
+    --accent-foreground: 235 30% 8%;
+
+    --cta: 145 70% 48%;
+    --cta-foreground: 235 30% 8%;
+    --cta-hover: 145 70% 42%;
 
     --success: 160 70% 50%;
-    --success-foreground: 220 20% 10%;
+    --success-foreground: 235 30% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --highlight: 275 80% 70%;
+    --highlight-foreground: 235 30% 8%;
 
-    --border: 220 20% 20%;
-    --input: 220 20% 20%;
-    --ring: 210 100% 60%;
+    --destructive: 0 62.8% 45%;
+    --destructive-foreground: 230 30% 96%;
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 235 25% 22%;
+    --input: 235 25% 22%;
+    --ring: 275 70% 65%;
+
+    --sidebar-background: 235 30% 10%;
+    --sidebar-foreground: 230 30% 96%;
+    --sidebar-primary: 225 85% 65%;
+    --sidebar-primary-foreground: 235 30% 8%;
+    --sidebar-accent: 235 25% 18%;
+    --sidebar-accent-foreground: 230 30% 96%;
+    --sidebar-border: 235 25% 22%;
+    --sidebar-ring: 275 70% 65%;
   }
 }
 
