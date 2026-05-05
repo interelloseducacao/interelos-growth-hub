@@ -1,5 +1,6 @@
 import { Layout } from '@/components/layout/Layout';
 import { SocialProof } from '@/components/sections/SocialProof';
+import { Testimonials } from '@/components/sections/Testimonials';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Target, Lightbulb, Users, Award, Sparkles, Quote, Compass, Eye, Linkedin, GraduationCap, Briefcase } from 'lucide-react';
@@ -355,6 +356,13 @@ export default function Sobre() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials */}
+      <Testimonials
+        badge="Quem já transformou"
+        title="Resultados Reais de Quem Confiou"
+        subtitle="Histórias de empreendedores que aplicaram nossa metodologia e mudaram seus negócios"
+      />
 
       {/* CTA */}
       <section className="section-padding bg-gradient-to-b from-background via-secondary/30 to-background relative overflow-hidden">
