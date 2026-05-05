@@ -216,11 +216,11 @@ export default function Sobre() {
                 >
                   <div className="rounded-2xl bg-card/95 backdrop-blur-sm overflow-hidden h-full flex flex-col">
                     {/* Photo header */}
-                    <div className="relative h-72 overflow-hidden bg-gradient-to-br from-primary/10 to-[hsl(var(--brand-purple))]/10">
+                    <div className="relative h-80 overflow-hidden bg-gradient-to-br from-primary/10 to-[hsl(var(--brand-purple))]/10">
                       <img
                         src={member.photo}
                         alt={member.name}
-                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
                       <div className="absolute top-4 right-4 w-11 h-11 rounded-xl bg-gradient-to-br from-primary to-[hsl(var(--brand-purple))] flex items-center justify-center shadow-[0_0_20px_hsl(var(--brand-purple)/0.5)]">
