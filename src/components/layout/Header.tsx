@@ -22,11 +22,15 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md border-b border-white/10">
       <nav className="container-section" aria-label="Global">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-20 lg:h-28">
           {/* Logo */}
           <div className="flex lg:flex-1">
-            <Link to="/" className="-m-1.5 p-1.5">
-              <img src={logoInterelos} alt="Interellos" className="h-10 w-auto" />
+            <Link to="/" className="-m-1.5 p-1.5 block">
+              <img
+                src={logoInterelos}
+                alt="Interellos"
+                className="h-16 lg:h-24 w-auto drop-shadow-[0_4px_18px_rgba(80,60,200,0.45)] transition-transform duration-300 hover:scale-105"
+              />
             </Link>
           </div>
 
