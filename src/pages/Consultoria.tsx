@@ -1,5 +1,7 @@
 import { Layout } from '@/components/layout/Layout';
 import { HowItWorks } from '@/components/sections/HowItWorks';
+import { InstitutionalCards } from '@/components/sections/InstitutionalCards';
+import { Testimonials } from '@/components/sections/Testimonials';
 import { CorporateForm } from '@/components/forms/CorporateForm';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -92,6 +94,8 @@ export default function Consultoria() {
           </div>
         </div>
       </section>
+
+      <InstitutionalCards variant="consultoria" />
 
       {/* Services */}
       <section className="section-padding bg-background">
@@ -198,6 +202,12 @@ export default function Consultoria() {
           </div>
         </div>
       </section>
+
+      <Testimonials
+        badge="Prova de resultado"
+        title="Resultados de empreendedores atendidos"
+        subtitle="Histórias de aplicação prática em precificação, contratos, margem e crescimento empresarial"
+      />
 
       {/* CTA with Form */}
       <section id="proposta" className="section-padding bg-secondary">
