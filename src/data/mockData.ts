@@ -12,6 +12,7 @@ export interface Course {
   workload: string;
   price?: string;
   originalPrice?: string;
+  installments?: string;
   themes: string[];
   target: string[];
   benefits: string[];
