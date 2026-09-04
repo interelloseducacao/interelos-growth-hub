@@ -19,6 +19,7 @@ import EventoDetalhe from "./pages/EventoDetalhe";
 import Contato from "./pages/Contato";
 import AreaDoAluno from "./pages/AreaDoAluno";
 import Instalar from "./pages/Instalar";
+import Privacidade from "./pages/Privacidade";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
