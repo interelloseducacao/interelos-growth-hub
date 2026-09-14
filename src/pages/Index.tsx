@@ -1,554 +1,429 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Layout } from '@/components/layout/Layout';
-import { SocialProof } from '@/components/sections/SocialProof';
-import { Testimonials } from '@/components/sections/Testimonials';
-import { InstitutionalCards } from '@/components/sections/InstitutionalCards';
-import { HowItWorks } from '@/components/sections/HowItWorks';
-import { CourseCard } from '@/components/cards/CourseCard';
-import { EventCard } from '@/components/cards/EventCard';
-import { CaseCard } from '@/components/cards/CaseCard';
-import { LeadForm } from '@/components/forms/LeadForm';
-import { Button } from '@/components/ui/button';
-import { courses, events, cases } from '@/data/mockData';
-import ProceduralGroundBackground from '@/components/backgrounds/ProceduralGroundBackground';
-import { 
-  ArrowRight, 
-  GraduationCap, 
-  Users, 
-  Briefcase,
-  Monitor,
-  Layers,
-  MapPin,
-  CheckCircle,
+import { useState } from "react";
+import {
+  ArrowRight,
+  Bot,
+  Building2,
+  Calculator,
+  Check,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Menu,
   MessageCircle,
-  Clock
-} from 'lucide-react';
+  Play,
+  Quote,
+  ShieldCheck,
+  Sparkles,
+  Users,
+  X,
+  Youtube,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo-interellos-brand.png";
 
-export default function Index() {
-  const featuredCourses = courses.filter(c => c.featured).slice(0, 6);
-  const featuredEvents = events.filter(e => e.featured).slice(0, 3);
-  const featuredCases = cases.filter(c => c.featured).slice(0, 3);
+const WHATSAPP_URL =
+  "https://wa.me/5511952135480?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Interellos%20Educa%C3%A7%C3%A3o%20e%20quero%20saber%20mais.";
+
+const courses = [
+  {
+    title: "Precificação Blindada para Empresas de Facilities",
+    description:
+      "Metodologia para precificar, negociar e reajustar contratos com margem real — do custo do posto à defesa de preço e à reforma tributária.",
+    price: "A partir de R$ 599",
+    detail: "R$ 1.299 no pacote completo com mentoria",
+    href: "https://precificacao.interellos.com.br",
+    icon: Calculator,
+    featured: true,
+    topics: ["Custo do posto", "Ponto de equilíbrio", "IBS e CBS"],
+  },
+  {
+    title: "IA Aplicada aos Negócios de Facilities",
+    description:
+      "Use IA para criar propostas, analisar editais, estruturar planilhas e produzir relatórios em minutos, sem aumentar a folha.",
+    price: "A partir de R$ 297",
+    detail: "R$ 597 com sessão individual mentorada",
+    href: "https://ia.interellos.com.br",
+    icon: Bot,
+    featured: false,
+    topics: ["Método V.E.R.I.F.I.C.A.", "Aplicação prática", "Mais produtividade"],
+  },
+];
+
+const mentors = [
+  {
+    name: "Luilson Gomes",
+    initials: "LG",
+    eyebrow: "Fundador e mentor",
+    description:
+      "30 anos em facilities. Foi do zero a mais de 2.200 funcionários em 14 anos, liderou contratos públicos e privados, atravessou uma recuperação judicial e reconstruiu.",
+    href: "https://luilson.interellos.com.br",
+  },
+  {
+    name: "Anderson Claudino",
+    initials: "AC",
+    eyebrow: "Co-instrutor",
+    description:
+      "Mais de 20 anos no setor e especialista em Inteligência Artificial aplicada aos negócios, transformando tecnologia em ferramentas úteis para a operação.",
+    href: "https://anderson.interellos.com.br",
+  },
+];
+
+const testimonials = [
+  {
+    name: "Maurício",
+    company: "GetClean",
+    videoId: "3KgGn1wN8wI",
+    quote:
+      "Um curso que me auxiliou muito, principalmente na precificação de serviço, gestão de margem e gestão do contrato.",
+  },
+  {
+    name: "Alexandre",
+    company: "AH Facilities",
+    videoId: "RWRRHWbVoyI",
+    quote:
+      "Passei a enxergar com clareza os pontos de ajuste no preço de venda. A negociação de novos postos ficou muito mais favorável.",
+  },
+  {
+    name: "Márcia Leite",
+    company: "Glad Services",
+    videoId: "suk7vVjlEwQ",
+    quote:
+      "Ganhei clareza para orientar o time comercial. A negociação ficou mais estratégica.",
+  },
+];
+
+const socialLinks = [
+  { label: "Instagram", href: "https://instagram.com/interellos.educacao", icon: Instagram },
+  { label: "LinkedIn", href: "https://linkedin.com/company/interellos-educação", icon: Linkedin },
+  { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61586831633149", icon: Facebook },
+  { label: "YouTube", href: "https://www.youtube.com/@Interellos.educacao", icon: Youtube },
+];
+
+function ExternalLink({ href, children, className = "" }: { href: string; children: React.ReactNode; className?: string }) {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
+      {children}
+    </a>
+  );
+}
+
+function VideoTestimonial({ testimonial }: { testimonial: (typeof testimonials)[number] }) {
+  const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <Layout>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-[80vh] flex items-center bg-zinc-950">
-        {/* WebGL Background */}
-        <ProceduralGroundBackground />
-
-        <div className="container-section relative z-10 py-20 md:py-28">
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 animate-fade-in shadow-[0_0_20px_rgba(255,255,255,0.15),0_0_40px_rgba(100,150,255,0.1)]">
-              <span className="w-2 h-2 rounded-full bg-cta animate-pulse shadow-[0_0_8px_rgba(var(--cta))]" />
-              <span className="text-sm font-medium text-white/90">30+ anos formando líderes de mercado</span>
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6 animate-fade-in text-white">
-              Desenvolvimento e 
-              <span className="block text-gradient-brand">aperfeiçoamento</span>
-              para empreendedores
-            </h1>
-            
-            <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl animate-fade-in" style={{ animationDelay: '100ms' }}>
-              Transforme seu negócio com metodologias comprovadas. 
-              Mais de <span className="font-semibold text-white">15.000 profissionais</span> já 
-              aceleraram suas carreiras conosco.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: '200ms' }}>
-              <Link to="/cursos">
-                <Button size="lg" className="w-full sm:w-auto text-lg px-8 py-6 text-white border-0 bg-[linear-gradient(135deg,hsl(215_78%_48%)_0%,hsl(255_60%_52%)_50%,hsl(275_60%_55%)_100%)] hover:brightness-110 shadow-[0_0_22px_hsl(275_70%_55%/0.5),0_0_44px_hsl(220_75%_45%/0.25)] hover:shadow-[0_0_30px_hsl(275_70%_60%/0.65),0_0_60px_hsl(220_75%_50%/0.35)] transition-all">
-                  Ver Cursos
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <Link to="/contato">
-                <Button size="lg" className="w-full sm:w-auto text-lg px-8 py-6 text-white border-0 bg-[linear-gradient(135deg,hsl(215_78%_48%)_0%,hsl(255_60%_52%)_50%,hsl(275_60%_55%)_100%)] hover:brightness-110 shadow-[0_0_22px_hsl(275_70%_55%/0.5),0_0_44px_hsl(220_75%_45%/0.25)] hover:shadow-[0_0_30px_hsl(275_70%_60%/0.65),0_0_60px_hsl(220_75%_50%/0.35)] transition-all">
-                  Fale Agora Conosco
-                </Button>
-              </Link>
-            </div>
-
-            {/* Quick stats */}
-            <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg animate-fade-in" style={{ animationDelay: '300ms' }}>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-white">30+</div>
-                <div className="text-sm text-white/60">Anos de experiência</div>
-              </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-white">15k+</div>
-                <div className="text-sm text-white/60">Alunos treinados</div>
-              </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-white">90+</div>
-                <div className="text-sm text-white/60">Empresas atendidas</div>
-              </div>
-            </div>
-          </div>
+    <article className="testimonial-card">
+      <div className="relative aspect-video overflow-hidden bg-brand-graphite">
+        {isPlaying ? (
+          <iframe
+            className="h-full w-full"
+            src={`https://www.youtube-nocookie.com/embed/${testimonial.videoId}?autoplay=1&rel=0`}
+            title={`Depoimento de ${testimonial.name}, ${testimonial.company}`}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        ) : (
+          <>
+            <img
+              src={`https://i.ytimg.com/vi/${testimonial.videoId}/hqdefault.jpg`}
+              alt={`Depoimento em vídeo de ${testimonial.name}, da ${testimonial.company}`}
+              className="h-full w-full object-cover opacity-80 transition duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-graphite/70 via-transparent to-transparent" />
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon"
+              aria-label={`Reproduzir depoimento de ${testimonial.name}`}
+              onClick={() => setIsPlaying(true)}
+              className="absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 rounded-full border border-brand-white/30 bg-brand-white/95 text-primary shadow-lg hover:bg-brand-white hover:text-brand-purple"
+            >
+              <Play className="ml-1 h-6 w-6 fill-current" />
+            </Button>
+          </>
+        )}
+      </div>
+      <div className="flex flex-1 flex-col p-6">
+        <Quote className="mb-4 h-6 w-6 text-brand-purple" aria-hidden="true" />
+        <blockquote className="flex-1 text-base leading-relaxed text-foreground">“{testimonial.quote}”</blockquote>
+        <div className="mt-6 border-t border-border pt-4">
+          <p className="font-display font-bold text-foreground">{testimonial.name}</p>
+          <p className="text-sm text-muted-foreground">{testimonial.company}</p>
         </div>
-      </section>
+      </div>
+    </article>
+  );
+}
 
-      {/* Social Proof */}
-      <SocialProof />
+export default function Index() {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-      <InstitutionalCards variant="educacao" />
+  const closeMenu = () => setMenuOpen(false);
 
-      {/* Sobre - Mini Institucional */}
-      <section className="section-padding bg-secondary/30">
-        <div className="container-section">
-          <motion.div 
-            className="max-w-4xl mx-auto text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+  return (
+    <div id="topo" className="min-h-screen overflow-x-hidden bg-background text-foreground">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-brand-white/10 bg-brand-graphite/90 backdrop-blur-xl">
+        <nav className="site-container flex h-20 items-center justify-between" aria-label="Navegação principal">
+          <a href="#topo" onClick={closeMenu} aria-label="Interellos Educação — início" className="shrink-0">
+            <img src={logo} alt="Interellos Educação" className="h-14 w-auto" />
+          </a>
+
+          <div className="hidden items-center gap-8 md:flex">
+            <a href="#cursos" className="nav-link">Cursos</a>
+            <a href="#mentores" className="nav-link">Mentores</a>
+            <a href="#contato" className="nav-link">Contato</a>
+          </div>
+
+          <div className="hidden md:block">
+            <Button asChild className="whatsapp-button h-11 px-5">
+              <ExternalLink href={WHATSAPP_URL}>
+                <MessageCircle className="h-4 w-4" />
+                Falar no WhatsApp
+              </ExternalLink>
+            </Button>
+          </div>
+
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((open) => !open)}
+            className="text-brand-white hover:bg-brand-white/10 hover:text-brand-white md:hidden"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Sobre a Interellos
-            </h2>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              A <span className="font-semibold text-foreground">Interellos</span> surgiu de uma necessidade 
-              do mercado corporativo em solucionar as principais dores do empreendedor. Com profissionais 
-              do mercado corporativo e acadêmico, unificamos <span className="font-semibold text-foreground">teoria e prática</span> com 
-              uma metodologia de aprendizado <span className="font-semibold text-foreground">personalizado e validado</span>.
-            </p>
-            <motion.div 
-              className="mt-8"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <Link to="/sobre">
-                <Button variant="outline" size="lg">
-                  Conheça nossa história
-                  <ArrowRight className="ml-2 h-5 w-5" />
+            {menuOpen ? <X /> : <Menu />}
+          </Button>
+        </nav>
+
+        {menuOpen && (
+          <div className="border-t border-brand-white/10 bg-brand-graphite px-5 py-5 md:hidden">
+            <div className="mx-auto flex max-w-7xl flex-col gap-1">
+              {[
+                ["Cursos", "#cursos"],
+                ["Mentores", "#mentores"],
+                ["Contato", "#contato"],
+              ].map(([label, href]) => (
+                <a key={href} href={href} onClick={closeMenu} className="rounded-md px-4 py-3 font-medium text-brand-white/85 hover:bg-brand-white/10">
+                  {label}
+                </a>
+              ))}
+              <Button asChild className="whatsapp-button mt-3 w-full">
+                <ExternalLink href={WHATSAPP_URL}>
+                  <MessageCircle /> Falar no WhatsApp
+                </ExternalLink>
+              </Button>
+            </div>
+          </div>
+        )}
+      </header>
+
+      <main>
+        <section className="hero-section relative flex min-h-[760px] items-center overflow-hidden pt-20">
+          <div className="hero-grid absolute inset-0" aria-hidden="true" />
+          <div className="site-container relative z-10 py-20 md:py-28">
+            <div className="max-w-5xl">
+              <p className="eyebrow-dark mb-7">
+                <span className="h-2 w-2 rounded-full bg-brand-cyan" />
+                Educação para donos de empresas de facilities
+              </p>
+              <h1 className="max-w-5xl font-display text-4xl font-bold leading-[1.07] text-brand-white sm:text-5xl md:text-7xl">
+                Domine a precificação dos seus contratos e{" "}
+                <span className="signature-text">pare de ser refém do operacional</span>
+              </h1>
+              <p className="mt-7 max-w-2xl text-lg leading-relaxed text-brand-white/70 md:text-xl">
+                Conhecimento de quem vive facilities há 30 anos, transformado em ferramentas práticas para você proteger margem, negociar melhor e liderar com clareza.
+              </p>
+              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+                <Button asChild size="lg" className="brand-button h-13 px-7 text-base">
+                  <a href="#cursos">Ver os cursos <ArrowRight /></a>
                 </Button>
-              </Link>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Solutions Section */}
-      <section className="section-padding bg-background">
-        <div className="container-section">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Nossas Solucoes
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Desenvolvemos pessoas e organizacoes com metodologias praticas e foco em resultados
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0 }}
-            >
-              <Link to="/cursos" className="rounded-lg border border-border bg-card p-8 text-center group block h-full shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover relative overflow-hidden">
-                <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
-                <motion.div 
-                  className="inline-flex items-center justify-center w-16 h-16 rounded-lg bg-gradient-to-br from-primary/15 to-brand-purple/15 border border-primary/15 mb-6 transition-all duration-300 group-hover:border-primary/35"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  <GraduationCap className="h-8 w-8 text-primary" />
-                </motion.div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
-                  Cursos e Treinamentos
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  Formacoes completas em gestao, estrategia, financas, lideranca e mais.
-                </p>
-                <span className="inline-flex items-center text-primary font-medium group-hover:gap-2 transition-all">
-                  Conhecer <ArrowRight className="ml-1 h-4 w-4" />
-                </span>
-              </Link>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <Link to="/mentorias" className="rounded-lg border border-border bg-card p-8 text-center group block h-full shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover relative overflow-hidden">
-                <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
-                <motion.div 
-                  className="inline-flex items-center justify-center w-16 h-16 rounded-lg bg-gradient-to-br from-primary/15 to-brand-purple/15 border border-primary/15 mb-6 transition-all duration-300 group-hover:border-primary/35"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  <Users className="h-8 w-8 text-primary" />
-                </motion.div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
-                  Mentorias
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  Acompanhamento individual ou em grupo com especialistas experientes.
-                </p>
-                <span className="inline-flex items-center text-primary font-medium group-hover:gap-2 transition-all">
-                  Conhecer <ArrowRight className="ml-1 h-4 w-4" />
-                </span>
-              </Link>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <Link to="/consultoria" className="rounded-lg border border-border bg-card p-8 text-center group block h-full shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover relative overflow-hidden">
-                <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
-                <motion.div 
-                  className="inline-flex items-center justify-center w-16 h-16 rounded-lg bg-gradient-to-br from-primary/15 to-brand-purple/15 border border-primary/15 mb-6 transition-all duration-300 group-hover:border-primary/35"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  <Briefcase className="h-8 w-8 text-primary" />
-                </motion.div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
-                  Consultorias
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  Solucoes personalizadas para desafios especificos da sua empresa.
-                </p>
-                <span className="inline-flex items-center text-primary font-medium group-hover:gap-2 transition-all">
-                  Conhecer <ArrowRight className="ml-1 h-4 w-4" />
-                </span>
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Modalities Section */}
-      <section className="section-padding bg-secondary">
-        <div className="container-section">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Modalidades
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Escolha o formato que melhor se adapta a sua rotina
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-card rounded-xl p-8 text-center border border-border">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent/10 mb-4">
-                <Monitor className="h-7 w-7 text-accent" />
+                <Button asChild size="lg" variant="outline" className="h-13 rounded-full border-brand-white/25 bg-transparent px-7 text-base text-brand-white hover:bg-brand-white/10 hover:text-brand-white">
+                  <ExternalLink href={WHATSAPP_URL}><MessageCircle /> Falar no WhatsApp</ExternalLink>
+                </Button>
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">EAD</h3>
-              <p className="text-muted-foreground">
-                Estude no seu ritmo, de qualquer lugar, com acesso a plataforma online.
-              </p>
             </div>
 
-            <div className="bg-card rounded-xl p-8 text-center border border-border">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-highlight/10 mb-4">
-                <Layers className="h-7 w-7 text-highlight-foreground" />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">Hibrido</h3>
-              <p className="text-muted-foreground">
-                Combine o melhor do online e presencial para uma experiencia completa.
-              </p>
-            </div>
-
-            <div className="bg-card rounded-xl p-8 text-center border border-border relative overflow-hidden">
-              <div className="absolute top-3 right-3">
-                <span className="px-2 py-1 text-xs font-medium bg-success text-success-foreground rounded-full">
-                  Destaque
-                </span>
-              </div>
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-success/10 mb-4">
-                <MapPin className="h-7 w-7 text-success" />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">Presencial</h3>
-              <p className="text-muted-foreground mb-3">
-                Imersao total com networking e troca de experiencias.
-              </p>
-              <p className="text-sm font-medium text-success">
-                Lapa - Sao Paulo
-              </p>
+            <div className="mt-16 grid max-w-4xl grid-cols-1 border-y border-brand-white/15 sm:grid-cols-3">
+              {[
+                ["+300", "alunos treinados"],
+                ["+50", "empresas de facilities pelo método"],
+                ["+6.000", "donos e gestores nas redes"],
+              ].map(([value, label], index) => (
+                <div key={value} className={`py-6 sm:px-7 ${index > 0 ? "border-t border-brand-white/15 sm:border-l sm:border-t-0" : ""}`}>
+                  <p className="font-mono text-3xl font-bold text-brand-cyan md:text-4xl">{value}</p>
+                  <p className="mt-1 text-sm leading-snug text-brand-white/60">{label}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Experiência Institucional */}
-      <section className="section-padding bg-background">
-        <div className="container-section">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <motion.h2 
-              className="text-3xl md:text-4xl font-bold text-foreground mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              Experiência que Transforma Empresas
-            </motion.h2>
-            <motion.p 
-              className="text-lg text-muted-foreground"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              Há mais de 30 anos combinamos vivência acadêmica e corporativa para desenvolver soluções que impulsionam o crescimento sustentável de empresas em todo o Brasil.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                icon: Briefcase,
-                title: "Gestão Empresarial",
-                description: "Estruturação de processos, planejamento estratégico e governança corporativa para empresas de todos os portes."
-              },
-              {
-                icon: Users,
-                title: "Desenvolvimento de Líderes",
-                description: "Formação de gestores e equipes de alta performance com metodologias práticas e foco em resultados."
-              },
-              {
-                icon: GraduationCap,
-                title: "Vivência Acadêmica",
-                description: "Professores com experiência em grandes instituições, trazendo rigor metodológico e conhecimento atualizado."
-              },
-              {
-                icon: Clock,
-                title: "Atuação Corporativa",
-                description: "Consultoria em empresas de pequeno a grande porte, com resultados comprovados em diversos setores."
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                className="bg-card rounded-lg p-6 border border-border shadow-card hover:shadow-card-hover transition-all hover:-translate-y-1"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <motion.div 
-                  className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br from-primary/15 to-brand-purple/15 border border-primary/15 mb-4"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  <item.icon className="h-6 w-6 text-primary" />
-                </motion.div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div 
-            className="mt-12 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <Link to="/sobre">
-              <Button variant="outline" size="lg">
-                Conheça nossa história
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <Testimonials />
-
-      {/* Cases Section */}
-      <section className="section-padding bg-secondary">
-        <div className="container-section">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <section id="sobre" className="scroll-mt-20 bg-background section-space">
+          <div className="section-accent" />
+          <div className="site-container grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Cases de Sucesso
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Resultados reais com empresas de diversos portes e setores
-              </p>
+              <p className="eyebrow">O que é a Interellos</p>
+              <h2 className="section-title mt-5">Educação feita dentro da realidade de facilities.</h2>
             </div>
-            <Link to="/cases" className="mt-4 md:mt-0">
-              <Button variant="outline">
-                Ver todos os cases
-                <ArrowRight className="ml-2 h-4 w-4" />
+            <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
+              <p>
+                A <strong className="text-foreground">Interellos Educação</strong> prepara donos e gestores de empresas de limpeza, portaria, segurança desarmada e manutenção em todo o Brasil para saírem do operacional e assumirem o papel de estrategistas.
+              </p>
+              <p>
+                O foco está onde a margem nasce ou desaparece: na precificação dos contratos. Mais recentemente, incorporamos Inteligência Artificial aplicada ao negócio para acelerar tarefas sem perder o controle e a capacidade de decisão.
+              </p>
+              <div className="mechanism-card">
+                <ShieldCheck className="h-7 w-7 shrink-0 text-brand-blue" aria-hidden="true" />
+                <p className="text-base text-foreground">
+                  <strong>Nosso mecanismo é simples:</strong> 30 anos de trincheira real em facilities, ferramentas práticas como planilhas e IA, e foco em valor percebido — nunca em achismo de preço.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="cursos" className="scroll-mt-20 bg-secondary section-space">
+          <div className="section-accent" />
+          <div className="site-container">
+            <div className="max-w-3xl">
+              <p className="eyebrow">Nossos cursos</p>
+              <h2 className="section-title mt-5">Dois caminhos práticos para ganhar margem e tempo.</h2>
+              <p className="section-lead mt-5">Escolha o desafio mais urgente e conheça a formação completa na página do curso.</p>
+            </div>
+            <div className="mt-12 grid gap-6 lg:grid-cols-2">
+              {courses.map((course) => (
+                <article key={course.title} className={course.featured ? "course-card course-card-featured" : "course-card"}>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-md bg-primary/10 text-primary">
+                    <course.icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="mt-7 font-display text-2xl font-bold leading-tight text-foreground md:text-3xl">{course.title}</h3>
+                  <p className="mt-4 leading-relaxed text-muted-foreground">{course.description}</p>
+                  <ul className="mt-6 space-y-3">
+                    {course.topics.map((topic) => (
+                      <li key={topic} className="flex items-center gap-3 text-sm font-medium text-foreground">
+                        <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brand-cyan/20 text-primary"><Check className="h-3 w-3" /></span>
+                        {topic}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-8 border-t border-border pt-6">
+                    <p className="font-mono text-2xl font-bold text-primary">{course.price}</p>
+                    <p className="mt-1 min-h-5 text-sm text-muted-foreground">{course.detail}</p>
+                    <Button asChild className={course.featured ? "brand-button mt-6 w-full" : "mt-6 w-full rounded-full"}>
+                      <ExternalLink href={course.href}>Ver o curso <ArrowRight /></ExternalLink>
+                    </Button>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="mentores" className="scroll-mt-20 bg-background section-space">
+          <div className="section-accent" />
+          <div className="site-container">
+            <div className="max-w-3xl">
+              <p className="eyebrow">Quem ensina</p>
+              <h2 className="section-title mt-5">Experiência de quem conhece o peso das decisões.</h2>
+            </div>
+            <div className="mt-12 grid gap-6 lg:grid-cols-2">
+              {mentors.map((mentor) => (
+                <article key={mentor.name} className="mentor-card">
+                  <div className="mentor-monogram" aria-hidden="true">{mentor.initials}</div>
+                  <div className="flex flex-1 flex-col p-7 md:p-9">
+                    <p className="eyebrow">{mentor.eyebrow}</p>
+                    <h3 className="mt-4 font-display text-3xl font-bold text-foreground">{mentor.name}</h3>
+                    <p className="mt-4 flex-1 leading-relaxed text-muted-foreground">{mentor.description}</p>
+                    <ExternalLink href={mentor.href} className="mt-7 inline-flex items-center gap-2 font-semibold text-primary transition hover:text-brand-purple">
+                      Conhecer {mentor.name.split(" ")[0]} <ArrowRight className="h-4 w-4" />
+                    </ExternalLink>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="depoimentos" className="bg-secondary section-space">
+          <div className="section-accent" />
+          <div className="site-container">
+            <div className="max-w-3xl">
+              <p className="eyebrow">Resultados reais</p>
+              <h2 className="section-title mt-5">O que dizem quem já fez.</h2>
+              <p className="section-lead mt-5">Donos e gestores contando, com as próprias palavras, o que mudou na rotina comercial.</p>
+            </div>
+            <div className="mt-12 grid gap-6 lg:grid-cols-3">
+              {testimonials.map((testimonial) => <VideoTestimonial key={testimonial.videoId} testimonial={testimonial} />)}
+            </div>
+          </div>
+        </section>
+
+        <section id="contato" className="scroll-mt-20 bg-brand-graphite py-20 text-brand-white md:py-28">
+          <div className="site-container">
+            <div className="mx-auto max-w-4xl text-center">
+              <Sparkles className="mx-auto h-8 w-8 text-brand-cyan" aria-hidden="true" />
+              <h2 className="mt-6 font-display text-4xl font-bold text-brand-white md:text-6xl">Fale com a gente.</h2>
+              <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-brand-white/65">
+                Conte em que momento sua empresa está. Nós ajudamos você a encontrar o próximo passo certo dentro do ecossistema Interellos.
+              </p>
+              <Button asChild size="lg" className="whatsapp-button mt-9 h-13 px-7 text-base">
+                <ExternalLink href={WHATSAPP_URL}><MessageCircle /> Conversar no WhatsApp</ExternalLink>
               </Button>
-            </Link>
+            </div>
           </div>
+        </section>
+      </main>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featuredCases.map((caseItem) => (
-              <CaseCard key={caseItem.id} caseItem={caseItem} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Events Section */}
-      <section className="section-padding bg-background">
-        <div className="container-section">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <footer className="border-t border-brand-white/10 bg-brand-graphite py-14 text-brand-white">
+        <div className="site-container">
+          <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Proximos Eventos
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Encontros, workshops e oportunidades de networking
-              </p>
-            </div>
-            <Link to="/eventos" className="mt-4 md:mt-0">
-              <Button variant="outline">
-                Ver agenda completa
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featuredEvents.map((event) => (
-              <EventCard key={event.id} event={event} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section with Form - Redesigned */}
-      <section className="relative section-padding overflow-hidden bg-gradient-to-br from-primary via-primary to-accent">
-        {/* Subtle decorative element */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full -translate-y-1/3 translate-x-1/3" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cta/10 rounded-full translate-y-1/3 -translate-x-1/3" />
-        </div>
-        
-        <div className="container-section relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left Column - Value Proposition */}
-            <div className="text-white">
-              <motion.h2 
-                className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight text-white"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              >
-                Desenvolva você e transforme seu negócio
-              </motion.h2>
-              
-              <motion.p 
-                className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-                Nossa metodologia une teoria e prática com uma experiência de aprendizado personalizada, diferente dos cursos tradicionais.
-              </motion.p>
-              
-              {/* Benefits List */}
-              <div className="space-y-4 mb-10">
-                {[
-                  "Metodologia exclusiva aplicada ao seu negócio",
-                  "Experiência de aprendizado personalizada",
-                  "Acompanhamento com professores especialistas"
-                ].map((benefit, index) => (
-                  <motion.div 
-                    key={index}
-                    className="flex items-center gap-3"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-                  >
-                    <motion.div 
-                      className="w-6 h-6 rounded-full bg-cta flex items-center justify-center flex-shrink-0"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ type: "spring", stiffness: 400 }}
-                    >
-                      <CheckCircle className="h-4 w-4 text-cta-foreground" />
-                    </motion.div>
-                    <span className="text-white text-lg">{benefit}</span>
-                  </motion.div>
+              <a href="#topo" aria-label="Voltar ao início"><img src={logo} alt="Interellos Educação" className="h-20 w-auto" /></a>
+              <p className="mt-4 max-w-xs text-sm leading-relaxed text-brand-white/60">Educação prática para donos e gestores de empresas de facilities.</p>
+              <div className="mt-6 flex gap-2">
+                {socialLinks.map(({ label, href, icon: Icon }) => (
+                  <Button key={label} asChild variant="ghost" size="icon" className="rounded-full border border-brand-white/15 text-brand-white/75 hover:bg-brand-white/10 hover:text-brand-white">
+                    <ExternalLink href={href} className="" ><Icon /><span className="sr-only">{label}</span></ExternalLink>
+                  </Button>
                 ))}
               </div>
-
-              {/* Social Proof */}
-              <motion.div 
-                className="flex items-center gap-3 pt-6 border-t border-white/20"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-              >
-                <div className="flex -space-x-2">
-                  <div className="w-10 h-10 rounded-full bg-white/20 border-2 border-white/30 flex items-center justify-center">
-                    <Users className="h-5 w-5 text-white/80" />
-                  </div>
-                </div>
-                <p className="text-white/80 text-sm md:text-base">
-                  Já ajudamos mais de <span className="font-semibold text-white">15.000 profissionais</span> a transformarem seus negócios
-                </p>
-              </motion.div>
             </div>
 
-            {/* Right Column - Form Card */}
-            <motion.div 
-              className="bg-card rounded-2xl p-6 md:p-8 shadow-2xl border border-border"
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              whileHover={{ boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
-            >
-              <motion.div 
-                className="flex items-center gap-2 mb-2"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 }}
-              >
-                <GraduationCap className="h-5 w-5 text-cta" />
-                <h3 className="text-xl md:text-2xl font-bold text-foreground">
-                  Garanta sua vaga nos próximos cursos
-                </h3>
-              </motion.div>
-              
-              <motion.div 
-                className="flex items-center gap-2 mb-6"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5 }}
-              >
-                <Clock className="h-4 w-4 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">Resposta em até 24 horas</span>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.6, duration: 0.4 }}
-              >
-                <LeadForm variant="full" />
-              </motion.div>
-            </motion.div>
+            <div>
+              <h3 className="footer-title">Navegação</h3>
+              <div className="footer-links">
+                <a href="#sobre">A Interellos</a><a href="#cursos">Cursos</a><a href="#mentores">Mentores</a><a href="#contato">Contato</a>
+              </div>
+            </div>
+            <div>
+              <h3 className="footer-title">Ecossistema</h3>
+              <div className="footer-links">
+                <ExternalLink href="https://precificacao.interellos.com.br">Precificação Blindada</ExternalLink>
+                <ExternalLink href="https://ia.interellos.com.br">IA para Facilities</ExternalLink>
+                <ExternalLink href="https://luilson.interellos.com.br">Luilson Gomes</ExternalLink>
+                <ExternalLink href="https://anderson.interellos.com.br">Anderson Claudino</ExternalLink>
+              </div>
+            </div>
+            <div>
+              <h3 className="footer-title">Dados legais</h3>
+              <address className="space-y-2 text-sm not-italic leading-relaxed text-brand-white/60">
+                <p>Interellos Intermediação de Negócios LTDA</p>
+                <p>CNPJ 40.937.083/0001-64</p>
+                <p>Rua John Harrison, 299 — Lapa<br />São Paulo/SP, CEP 05074-080</p>
+                <a className="block hover:text-brand-white" href="mailto:contato@interellos.com.br">contato@interellos.com.br</a>
+              </address>
+            </div>
+          </div>
+          <div className="mt-12 flex flex-col gap-4 border-t border-brand-white/10 pt-7 text-xs text-brand-white/50 sm:flex-row sm:items-center sm:justify-between">
+            <p>© 2026 Interellos Educação. Todos os direitos reservados.</p>
+            <div className="flex flex-wrap gap-5">
+              <ExternalLink href="https://luilson.interellos.com.br/politica-de-privacidade">Política de Privacidade</ExternalLink>
+              <ExternalLink href="https://luilson.interellos.com.br/termos-de-uso">Termos de Uso</ExternalLink>
+            </div>
           </div>
         </div>
-      </section>
-    </Layout>
+      </footer>
+    </div>
   );
 }
