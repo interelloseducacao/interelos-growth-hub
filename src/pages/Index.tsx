@@ -111,7 +111,7 @@ function VideoTestimonial({ testimonial }: { testimonial: (typeof testimonials)[
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <article className="testimonial-card">
+    <article className="testimonial-card group">
       <div className="relative aspect-video overflow-hidden bg-brand-graphite">
         {isPlaying ? (
           <iframe

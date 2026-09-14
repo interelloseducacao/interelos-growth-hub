@@ -61,7 +61,7 @@
   .course-card-featured { border-color: transparent; background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box, var(--signature-gradient) border-box; }
   .mentor-card { @apply grid overflow-hidden rounded-md border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:grid-cols-[150px_1fr]; }
   .mentor-monogram { @apply flex min-h-40 items-center justify-center bg-primary font-display text-5xl font-bold text-brand-white sm:min-h-full; background-image: linear-gradient(145deg, hsl(var(--brand-indigo)), hsl(var(--brand-violet))); }
-  .testimonial-card { @apply group flex min-h-[520px] flex-col overflow-hidden rounded-md border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl; }
+  .testimonial-card { @apply flex min-h-[520px] flex-col overflow-hidden rounded-md border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl; }
   .footer-title { @apply font-display text-base font-bold text-brand-white; }
   .footer-links { @apply mt-5 flex flex-col gap-3 text-sm text-brand-white/60; }
   .footer-links a { @apply w-fit transition hover:text-brand-white; }
