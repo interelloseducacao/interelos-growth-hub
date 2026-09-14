@@ -25,11 +25,16 @@ export default {
           glow: "hsl(var(--primary-glow))",
         },
         brand: {
-          blue: "hsl(var(--brand-blue-solid))",
-          "blue-metallic": "hsl(var(--primary))",
+          indigo: "hsl(var(--brand-indigo))",
+          violet: "hsl(var(--brand-violet))",
           purple: "hsl(var(--brand-purple))",
-          "purple-solid": "hsl(var(--brand-purple-solid))",
-          "purple-glow": "hsl(var(--brand-purple-glow))",
+          blue: "hsl(var(--brand-blue))",
+          cyan: "hsl(var(--brand-cyan))",
+          graphite: "hsl(var(--brand-graphite))",
+          gray: "hsl(var(--brand-gray))",
+          mist: "hsl(var(--brand-mist))",
+          white: "hsl(var(--brand-white))",
+          whatsapp: "hsl(var(--brand-whatsapp))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -86,6 +91,8 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
       },
       keyframes: {
         "accordion-down": {
