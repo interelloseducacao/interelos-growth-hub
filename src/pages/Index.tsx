@@ -19,7 +19,7 @@ import {
   Youtube,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo-interelos.png";
+import logo from "@/assets/logo-interellos-brand.png";
 
 const WHATSAPP_URL =
   "https://wa.me/5511952135480?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Interellos%20Educa%C3%A7%C3%A3o%20e%20quero%20saber%20mais.";
