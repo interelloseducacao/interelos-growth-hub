@@ -58,14 +58,6 @@ const mentors = [
       "30 anos em facilities. Foi do zero a mais de 2.200 funcionários em 14 anos, liderou contratos públicos e privados, atravessou uma recuperação judicial e reconstruiu.",
     href: "https://luilson.interellos.com.br",
   },
-  {
-    name: "Anderson Claudino",
-    initials: "AC",
-    eyebrow: "Co-instrutor",
-    description:
-      "Mais de 20 anos no setor e especialista em Inteligência Artificial aplicada aos negócios, transformando tecnologia em ferramentas úteis para a operação.",
-    href: "https://anderson.interellos.com.br",
-  },
 ];
 
 const testimonials = [
@@ -170,7 +162,7 @@ export default function Index() {
 
           <div className="hidden items-center gap-8 md:flex">
             <a href="#cursos" className="nav-link">Cursos</a>
-            <a href="#mentores" className="nav-link">Mentores</a>
+            <a href="#mentores" className="nav-link">Mentor</a>
             <a href="#contato" className="nav-link">Contato</a>
           </div>
 
@@ -201,7 +193,7 @@ export default function Index() {
             <div className="mx-auto flex max-w-7xl flex-col gap-1">
               {[
                 ["Cursos", "#cursos"],
-                ["Mentores", "#mentores"],
+                ["Mentor", "#mentores"],
                 ["Contato", "#contato"],
               ].map(([label, href]) => (
                 <a key={href} href={href} onClick={closeMenu} className="rounded-md px-4 py-3 font-medium text-brand-white/85 hover:bg-brand-white/10">
@@ -327,7 +319,7 @@ export default function Index() {
               <p className="eyebrow">Quem ensina</p>
               <h2 className="section-title mt-5">Experiência de quem conhece o peso das decisões.</h2>
             </div>
-            <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            <div className="mt-12 grid max-w-3xl gap-6">
               {mentors.map((mentor) => (
                 <article key={mentor.name} className="mentor-card">
                   <div className="mentor-monogram" aria-hidden="true">{mentor.initials}</div>
@@ -393,7 +385,7 @@ export default function Index() {
             <div>
               <h3 className="footer-title">Navegação</h3>
               <div className="footer-links">
-                <a href="#sobre">A Interellos</a><a href="#cursos">Cursos</a><a href="#mentores">Mentores</a><a href="#contato">Contato</a>
+                <a href="#sobre">A Interellos</a><a href="#cursos">Cursos</a><a href="#mentores">Mentor</a><a href="#contato">Contato</a>
               </div>
             </div>
             <div>
@@ -402,7 +394,6 @@ export default function Index() {
                 <ExternalLink href="https://precificacao.interellos.com.br">Precificação Blindada</ExternalLink>
                 <ExternalLink href="https://ia.interellos.com.br">IA para Facilities</ExternalLink>
                 <ExternalLink href="https://luilson.interellos.com.br">Luilson Gomes</ExternalLink>
-                <ExternalLink href="https://anderson.interellos.com.br">Anderson Claudino</ExternalLink>
               </div>
             </div>
             <div>
